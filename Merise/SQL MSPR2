@@ -1,0 +1,90 @@
+DROP TABLE IF EXISTS Page_web ;
+CREATE TABLE Page_web (Id_Page_web INT AUTO_INCREMENT NOT NULL,
+Adresse_url_Page_web VARCHAR(250),
+PRIMARY KEY (Id_Page_web)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Container ;
+CREATE TABLE Container (Id_Container INT AUTO_INCREMENT NOT NULL,
+Nom_Container VARCHAR(100),
+Designation_Container VARCHAR(250),
+PRIMARY KEY (Id_Container)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Contenu ;
+CREATE TABLE Contenu (Id_Contenu INT AUTO_INCREMENT NOT NULL,
+Description_Contenu VARCHAR(250),
+Adresse_image_Contenu VARCHAR(250),
+Contenu_texte_Contenu TEXT,
+PRIMARY KEY (Id_Contenu)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS User_admin ;
+CREATE TABLE User_admin (Id_User_admin INT AUTO_INCREMENT NOT NULL,
+User_User_admin VARCHAR(100),
+Password_User_admin VARCHAR(255),
+profil_id_profil **NOT FOUND**,
+PRIMARY KEY (Id_User_admin)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Message ;
+CREATE TABLE Message (Id_Message INT AUTO_INCREMENT NOT NULL,
+Nom_Message VARCHAR(100),
+Prenom_Message VARCHAR(100),
+Adresse_Message VARCHAR(500),
+Adresse_mail_Message VARCHAR(250),
+Telephone__Message VARCHAR(20),
+Texte_Message TEXT,
+Statut_Message VARCHAR(20),
+PRIMARY KEY (Id_Message)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Action ;
+CREATE TABLE Action (Id_Action INT AUTO_INCREMENT NOT NULL,
+Type_Action VARCHAR(20),
+PRIMARY KEY (Id_Action)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Profil ;
+CREATE TABLE Profil (Id_Profil INT AUTO_INCREMENT NOT NULL,
+Nom_Profil VARCHAR(100),
+Prenom_Profil VARCHAR(100),
+Adresse_Profil VARCHAR(500),
+Adresse_mail_Profil VARCHAR(250),
+user_admin_id_user_admin **NOT FOUND**,
+PRIMARY KEY (Id_Profil)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Contenir ;
+CREATE TABLE Contenir (Id_Page_web **NOT FOUND** AUTO_INCREMENT NOT NULL,
+Id_Container **NOT FOUND** NOT NULL,
+PRIMARY KEY (Id_Page_web,
+ Id_Container)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Associer ;
+CREATE TABLE Associer (Id_Container **NOT FOUND** AUTO_INCREMENT NOT NULL,
+Id_Contenu **NOT FOUND** NOT NULL,
+PRIMARY KEY (Id_Container,
+ Id_Contenu)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Traiter ;
+CREATE TABLE Traiter (Id_User_admin **NOT FOUND** AUTO_INCREMENT NOT NULL,
+Id_Message **NOT FOUND** NOT NULL,
+Id_Action **NOT FOUND** NOT NULL,
+Date_Traiter DATETIME,
+PRIMARY KEY (Id_User_admin,
+ Id_Message,
+ Id_Action)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Modifier_Contenu ;
+CREATE TABLE Modifier_Contenu (Id_Contenu **NOT FOUND** AUTO_INCREMENT NOT NULL,
+Id_User_admin **NOT FOUND** NOT NULL,
+Date_Modifier_Contenu DATETIME,
+PRIMARY KEY (Id_Contenu,
+ Id_User_admin)) ENGINE=InnoDB;
+
+ALTER TABLE User_admin ADD CONSTRAINT FK_User_admin_profil_id_profil FOREIGN KEY (profil_id_profil) REFERENCES Profil (Id_Profil);
+
+ALTER TABLE Profil ADD CONSTRAINT FK_Profil_user_admin_id_user_admin FOREIGN KEY (user_admin_id_user_admin) REFERENCES User_admin (Id_User_admin);
+ALTER TABLE Contenir ADD CONSTRAINT FK_Contenir_Id_Page_web FOREIGN KEY (Id_Page_web) REFERENCES Page_web (Id_Page_web);
+ALTER TABLE Contenir ADD CONSTRAINT FK_Contenir_Id_Container FOREIGN KEY (Id_Container) REFERENCES Container (Id_Container);
+ALTER TABLE Associer ADD CONSTRAINT FK_Associer_Id_Container FOREIGN KEY (Id_Container) REFERENCES Container (Id_Container);
+ALTER TABLE Associer ADD CONSTRAINT FK_Associer_Id_Contenu FOREIGN KEY (Id_Contenu) REFERENCES Contenu (Id_Contenu);
+ALTER TABLE Traiter ADD CONSTRAINT FK_Traiter_Id_User_admin FOREIGN KEY (Id_User_admin) REFERENCES User_admin (Id_User_admin);
+ALTER TABLE Traiter ADD CONSTRAINT FK_Traiter_Id_Message FOREIGN KEY (Id_Message) REFERENCES Message (Id_Message);
+ALTER TABLE Traiter ADD CONSTRAINT FK_Traiter_Id_Action FOREIGN KEY (Id_Action) REFERENCES Action (Id_Action);
+ALTER TABLE Modifier_Contenu ADD CONSTRAINT FK_Modifier_Contenu_Id_Contenu FOREIGN KEY (Id_Contenu) REFERENCES Contenu (Id_Contenu);
+ALTER TABLE Modifier_Contenu ADD CONSTRAINT FK_Modifier_Contenu_Id_User_admin FOREIGN KEY (Id_User_admin) REFERENCES User_admin (Id_User_admin);

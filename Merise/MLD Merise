@@ -1,0 +1,12 @@
+# Modèle créé le : Sat Jun 14 12:12:26 CEST 2025 
+Page_web (Id_Page_web, Adresse_url_Page_web) 
+Container (Id_Container, Nom_Container, Designation_Container) 
+Contenu (Id_Contenu, Description_Contenu, Adresse_image_Contenu, Contenu_texte_Contenu) 
+User_admin (Id_User_admin, User_User_admin, Password_User_admin, #profil_id_profil) 
+Message (Id_Message, Nom_Message, Prenom_Message, Adresse_Message, Adresse_mail_Message, Telephone__Message, Texte_Message, Statut_Message) 
+Action (Id_Action, Type_Action) 
+Profil (Id_Profil, Nom_Profil, Prenom_Profil, Adresse_Profil, Adresse_mail_Profil, #user_admin_id_user_admin) 
+Contenir (Id_Page_web, Id_Container) 
+Associer (Id_Container, Id_Contenu) 
+Traiter (Id_User_admin, Id_Message, Id_Action, Date_Traiter) 
+Modifier_Contenu (Id_Contenu, Id_User_admin, Date_Modifier_Contenu) 

@@ -1,0 +1,175 @@
+@import "./style_commun.css";
+/* Prestations */
+/* Navbar Desktop */
+#navbar_desktop{
+  position : relative !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+main {
+  margin:0% !important;
+  padding: 2% !important;
+  position: relative !important;
+}
+.container_global {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin-top: -5% !important;
+}
+.container_image {
+  display: flex !important;
+  justify-content: center !important;
+}
+.card {
+  width: 400px !important;
+  height: 400px !important;
+  border-radius: 50% !important;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative !important;
+}
+.modal_entete h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px !important;
+}
+.modal_entete img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.modal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 800px !important;
+  height: 420px !important;
+  background-color: black;
+  transform: translate(-50%, -50%) !important;
+  z-index: 2 !important;
+}
+.modal_content {
+  width: 100%;
+}
+.modal_content {
+  width: 100% !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-around !important;
+  align-items: center !important;
+  background-color: black !important;
+}
+.modal_content div {
+  overflow: hidden !important;
+  padding: 2px !important;
+}
+.modal_content div img {
+  min-width: 100% !important;
+  object-fit: cover !important;
+  padding: 1px !important;
+}
+.vide {
+  width: 20% !important;
+}
+.une {
+  background-image: url(../ressource/Prestation/Conception.png);
+  top: 6rem !important;
+}
+.deux {
+  background-image: url(../ressource/Prestation/Entretien.png);
+  right: -2rem !important;
+}
+.trois {
+  background-image: url(../ressource/Prestation/Taille\ haie.png);
+  left: -2rem !important;
+}
+.quatre {
+  background-image: url(../ressource/Prestation/Compost.png);
+  right: 0.5rem !important;
+}
+.cinq {
+  background-image: url(../ressource/Prestation/Elagage.png);
+  left: 0.5rem !important;
+}
+.text {
+  position: absolute;
+  bottom: 25px;
+  background-color: rgba(34, 139, 34, 0.8);
+  color: white;
+  padding: 15px !important;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  z-index: 1;
+  margin-left: 10% !important;
+}
+#footer{
+  position : relative !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+@media screen and (max-width: 1000px) {
+  #navbar_desktop{
+    position : relative !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+  }
+  main {
+      margin: 0% !important;
+      padding-top: 110px !important;
+      position: relative !important;
+  }
+  .container_image {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .card {
+    margin-top: 1% !important;
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .modal_entete h2 {
+    text-align: start;
+  }
+  .modal {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 270px !important;
+    height: 1150px !important;
+    background-color: black;
+    transform: translate(-50%, -50%) !important;
+  }
+  .modal_content {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-around !important;
+    align-items: center !important;
+    background-color: black !important;
+  }
+  .modal_content div {
+    width: 265px !important;
+  }
+  .une {
+    top: 0 !important;
+  }
+  .deux {
+    right: 0 !important;
+  }
+  .trois {
+    left: 0 !important;
+  }
+  .quatre {
+    right: 0 !important;
+  }
+  .cinq {
+    left: 0 !important;
+  }
+}

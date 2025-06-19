@@ -1,0 +1,47 @@
+@import "./style_commun.css";
+/* Trarif */
+.container_global{
+  display: flex!important;
+  flex-direction: column;
+  width: 100%;
+}
+.container_ligne{
+  display: flex!important;
+  width: 100%;
+}
+.Tarif{
+  width:31%!important;
+  height:325px!important;
+  background-color:#f1f5f275 !important;
+  margin: 1%!important;
+  padding: 1% !important;
+  border-radius: 10px !important;
+  box-shadow: 5px 5px 10px 1px black !important;
+  overflow: auto;
+}
+table{
+  width: 100% !important;
+}
+.colPrestation{
+  width: 75% !important;
+  font-size: 0.9rem !important;
+  line-height: 120% !important;
+  padding: 0.2rem !important;
+}
+.colPrix{
+  width: 25% !important;
+  text-align: center !important;
+  font-size: 0.7rem !important;
+  line-height: 150% !important;
+  padding: 0.2rem !important;
+}
+@media screen and (max-width: 1000px) {
+  .container_ligne{
+    flex-direction: column;
+  }
+    .Tarif{
+      width:90%!important;
+      margin: 2% 5%!important;
+      padding: 1% !important;
+    }
+}

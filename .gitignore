@@ -1,0 +1,27 @@
+# Node.js. Ce répertoire contient toutes les dépendances installées via npm, il ne doit pas être versionné car il peut être recréé avec la commande npm install en utilisant package.json et package-lock.json
+node_modules/
+# Fichiers de logs. Ces fichiers de log sont générés en cas d'erreurs avec npm ou Yarn. Ils ne sont pas nécessaires au projet, donc ils sont ignorés.
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+# Répertoire de build (dépendant de la configuration de votre projet). Ces dossiers sont souvent utilisés pour les fichiers compilés ou de distribution. Si vous utilisez un outil comme Webpack ou un processus de build, ces dossiers contiennent des fichiers générés automatiquement qui ne doivent pas être suivis par Git.
+dist/
+build/
+style/
+# Fichiers de configuration IDE (ex. VSCode, IntelliJ). Ils contiennent des configurations spécifiques aux IDE (par exemple, Visual Studio Code ou JetBrains). Ces fichiers ne concernent que l'environnement de développement local, donc ils ne doivent pas être partagés dans un projet versionné. vscode/
+.idea/.
+# Fichiers systèmes (macOS, Windows)
+DS_Store
+Thumbs.db
+Les outils de prétraitement CSS/JS. Ces fichiers de mapage source sont générés lorsque vous compilez du code source en CSS ou en JavaScript minifié. Ils sont utiles pour le débogage, mais ne doivent pas être ajoutés à Git dans la plupart des cas.
+*.css.map
+*.js.map
+# Si vous utilisez Sass/Scss, vous pouvez ignorer les fichiers compilés. Si vous avez un dossier src/scss/ et que vous générez des fichiers CSS à partir de vos fichiers SCSS, vous pouvez ignorer les fichiers CSS compilés.
+style/*.css
+# Autres fichiers temporaires. Ce modèle ignore tous les fichiers de log générés lors de l'exécution de certains outils ou serveurs.
+*.log
+# Si vous avez des fichiers de configuration spécifiques à un environnement (ex: .env)
+*.env
+*.env.*
+# Si vous utilisez des outils de bundling (Webpack, Parcel, etc.) :
+webpack.config.js
