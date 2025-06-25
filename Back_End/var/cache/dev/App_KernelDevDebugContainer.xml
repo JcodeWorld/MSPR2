@@ -25,6 +25,7 @@
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -74,6 +75,10 @@
       <parameter key="MakerBundle" type="collection">
         <parameter key="path">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\maker-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="path">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\doctrine\doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -358,6 +363,121 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
+    </service>
+    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\Entity\Action" class="App\Entity\Action" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\AssocierContenu" class="App\Entity\AssocierContenu" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\AssocierTarif" class="App\Entity\AssocierTarif" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Container" class="App\Entity\Container" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Contenir" class="App\Entity\Contenir" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Contenu" class="App\Entity\Contenu" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Message" class="App\Entity\Message" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\ModifierContenu" class="App\Entity\ModifierContenu" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\ModifierTarif" class="App\Entity\ModifierTarif" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\PageWeb" class="App\Entity\PageWeb" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Profil" class="App\Entity\Profil" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Tarif" class="App\Entity\Tarif" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Traiter" class="App\Entity\Traiter" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\UserAdmin" class="App\Entity\UserAdmin" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\AssocierTarifRepository" class="App\Repository\AssocierTarifRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ContainerRepository" class="App\Repository\ContainerRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ContenirRepository" class="App\Repository\ContenirRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ContenuRepository" class="App\Repository\ContenuRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
@@ -2409,6 +2529,7 @@
           <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\security-bundle/translations</argument>
           <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\monolog-bundle/translations</argument>
           <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\maker-bundle/translations</argument>
+          <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2428,6 +2549,7 @@
             <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\security-bundle/translations</argument>
             <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\monolog-bundle/translations</argument>
             <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\symfony\maker-bundle/translations</argument>
+            <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -5325,7 +5447,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.GIuJv7e"/>
+      <argument type="service" id=".service_locator.reHomFh"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7416,6 +7538,90 @@
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
     </service>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="doctrine.fixtures.loader"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="collection">
+        <argument key="default" type="service" id="doctrine.fixtures.purger.orm_purger_factory"/>
+      </argument>
+      <call method="setName">
+        <argument>doctrine:fixtures:load</argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader">
+      <argument type="service" id="service_container"/>
+      <call method="addFixtures">
+        <argument type="collection">
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+        </argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
+      <tag name="doctrine.fixtures.purger_factory" alias="default"/>
+    </service>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Action.0.App\Entity\Action" class="App\Entity\Action" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Action" class="App\Entity\Action" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\AssocierContenu.0.App\Entity\AssocierContenu" class="App\Entity\AssocierContenu" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\AssocierContenu" class="App\Entity\AssocierContenu" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\AssocierTarif.0.App\Entity\AssocierTarif" class="App\Entity\AssocierTarif" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\AssocierTarif" class="App\Entity\AssocierTarif" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Container.0.App\Entity\Container" class="App\Entity\Container" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Container" class="App\Entity\Container" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Contenir.0.App\Entity\Contenir" class="App\Entity\Contenir" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Contenir" class="App\Entity\Contenir" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Contenu.0.App\Entity\Contenu" class="App\Entity\Contenu" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Contenu" class="App\Entity\Contenu" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Message.0.App\Entity\Message" class="App\Entity\Message" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Message" class="App\Entity\Message" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\ModifierContenu.0.App\Entity\ModifierContenu" class="App\Entity\ModifierContenu" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\ModifierContenu" class="App\Entity\ModifierContenu" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\ModifierTarif.0.App\Entity\ModifierTarif" class="App\Entity\ModifierTarif" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\ModifierTarif" class="App\Entity\ModifierTarif" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\PageWeb.0.App\Entity\PageWeb" class="App\Entity\PageWeb" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\PageWeb" class="App\Entity\PageWeb" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Profil.0.App\Entity\Profil" class="App\Entity\Profil" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Profil" class="App\Entity\Profil" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Tarif.0.App\Entity\Tarif" class="App\Entity\Tarif" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Tarif" class="App\Entity\Tarif" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Traiter.0.App\Entity\Traiter" class="App\Entity\Traiter" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Traiter" class="App\Entity\Traiter" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\UserAdmin.0.App\Entity\UserAdmin" class="App\Entity\UserAdmin" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\UserAdmin" class="App\Entity\UserAdmin" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AssocierTarifRepository" class="App\Repository\AssocierTarifRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AssocierTarifRepository" class="App\Repository\AssocierTarifRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContainerRepository" class="App\Repository\ContainerRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContainerRepository" class="App\Repository\ContainerRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContenirRepository" class="App\Repository\ContenirRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContenirRepository" class="App\Repository\ContenirRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContenuRepository" class="App\Repository\ContenuRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContenuRepository" class="App\Repository\ContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8265,9 +8471,24 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.reHomFh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\ActionRepository" type="service_closure" id="App\Repository\ActionRepository"/>
+        <argument key="App\Repository\AssocierContenuRepository" type="service_closure" id="App\Repository\AssocierContenuRepository"/>
+        <argument key="App\Repository\AssocierTarifRepository" type="service_closure" id="App\Repository\AssocierTarifRepository"/>
+        <argument key="App\Repository\ContainerRepository" type="service_closure" id="App\Repository\ContainerRepository"/>
+        <argument key="App\Repository\ContenirRepository" type="service_closure" id="App\Repository\ContenirRepository"/>
+        <argument key="App\Repository\ContenuRepository" type="service_closure" id="App\Repository\ContenuRepository"/>
+        <argument key="App\Repository\MessageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
+        <argument key="App\Repository\ModifierContenuRepository" type="service_closure" id="App\Repository\ModifierContenuRepository"/>
+        <argument key="App\Repository\ModifierTarifRepository" type="service_closure" id="App\Repository\ModifierTarifRepository"/>
+        <argument key="App\Repository\PageWebRepository" type="service_closure" id="App\Repository\PageWebRepository"/>
+        <argument key="App\Repository\ProfilRepository" type="service_closure" id="App\Repository\ProfilRepository"/>
+        <argument key="App\Repository\TarifRepository" type="service_closure" id="App\Repository\TarifRepository"/>
+        <argument key="App\Repository\TraiterRepository" type="service_closure" id="App\Repository\TraiterRepository"/>
+        <argument key="App\Repository\UserAdminRepository" type="service_closure" id="App\Repository\UserAdminRepository"/>
+      </argument>
     </service>
     <service id=".service_locator.BxSdgVt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8579,6 +8800,10 @@
       <argument type="collection">
         <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
       </argument>
+    </service>
+    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
     </service>
     <service id=".service_locator.DOrA4Nm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9633,7 +9858,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.Jy9dVyb"/>
+      <argument type="service" id=".service_locator.8V5pvc0"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -9724,6 +9949,7 @@
         <argument key="lint:twig">twig.command.lint</argument>
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -9756,7 +9982,7 @@
         <argument key="make:webhook">maker.auto_command.make_webhook</argument>
       </argument>
     </service>
-    <service id=".service_locator.Jy9dVyb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.8V5pvc0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -9848,6 +10074,7 @@
         <argument key="twig.command.lint" type="service_closure" id=".twig.command.lint.lazy"/>
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+        <argument key="doctrine.fixtures_load_command" type="service_closure" id="doctrine.fixtures_load_command"/>
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
