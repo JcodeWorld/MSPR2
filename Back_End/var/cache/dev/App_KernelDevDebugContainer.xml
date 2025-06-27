@@ -364,7 +364,10 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
+    <service id="App\DataFixtures\MessageFixtures" class="App\DataFixtures\MessageFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\DataFixtures\UserAdminFixtures" class="App\DataFixtures\UserAdminFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\Entity\Action" class="App\Entity\Action" autowire="true" autoconfigure="true">
@@ -7555,7 +7558,11 @@
       <call method="addFixtures">
         <argument type="collection">
           <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
+            <argument key="fixture" type="service" id="App\DataFixtures\MessageFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\UserAdminFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
         </argument>
@@ -7564,8 +7571,10 @@
     <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
       <tag name="doctrine.fixtures.purger_factory" alias="default"/>
     </service>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\MessageFixtures" class="App\DataFixtures\MessageFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\MessageFixtures" class="App\DataFixtures\MessageFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserAdminFixtures" class="App\DataFixtures\UserAdminFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\UserAdminFixtures" class="App\DataFixtures\UserAdminFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Action.0.App\Entity\Action" class="App\Entity\Action" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Action" class="App\Entity\Action" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\AssocierContenu.0.App\Entity\AssocierContenu" class="App\Entity\AssocierContenu" autowire="true" abstract="true"/>

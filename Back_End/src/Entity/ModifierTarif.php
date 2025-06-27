@@ -20,7 +20,8 @@ class ModifierTarif
     #[ORM\ManyToOne(inversedBy: 'modifierTarifs')]
     #[ORM\JoinColumn(nullable: false)]
     private ?UserAdmin $IdUserAdmin = null;
-
+    #[ORM\Column]
+    private ?\DateTime $Date_Modifier_Tarif = null;
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +35,26 @@ class ModifierTarif
     public function setIdTarif(?Tarif $IdTarif): static
     {
         $this->IdTarif = $IdTarif;
+
+        return $this;
+    }
+     public function getIdUserAdmin(): ?UserAdmin
+    {
+        return $this->IdUserAdmin;
+    }
+    public function setIdUserAdmin(?UserAdmin $userAdmin): static
+    {
+        $this->IdUserAdmin = $userAdmin;
+        return $this;
+    }
+    public function getDateModifierTarif(): ?\DateTime
+    {
+        return $this->Date_Modifier_Tarif;
+    }
+
+    public function setDateModifierTarif(\DateTime $Date_Modifier_Tarif): static
+    {
+        $this->Date_Modifier_Tarif = $Date_Modifier_Tarif;
 
         return $this;
     }

@@ -109,7 +109,7 @@ class Tarif
 public function addModifierTarif(ModifierTarif $modifierTarif): static
 {
     if (!$this->modifierTarifs->contains($modifierTarif)) {
-        $this->modifierTarifs[] = $modifierTarif;
+        $this->modifierTarifs->add( $modifierTarif);
         $modifierTarif->setIdTarif($this);
     }
 

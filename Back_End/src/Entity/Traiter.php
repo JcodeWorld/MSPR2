@@ -56,7 +56,17 @@ class Traiter
 
         return $this;
     }
+public function getIdAction(): ?Action
+{
+    return $this->IdAction;
+}
 
+public function setIdAction(?Action $IdAction): static
+{
+    $this->IdAction = $IdAction;
+
+    return $this;
+}
     public function getDateTraiter(): ?\DateTime
     {
         return $this->Date_Traiter;

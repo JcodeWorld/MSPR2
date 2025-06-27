@@ -146,7 +146,7 @@ class Message
     {
         if (!$this->traiters->contains($traiter)) {
             $this->traiters[] = $traiter;
-            $traiter->setMessage($this);
+            $traiter->setIdMessage($this);
         }
 
         return $this;
@@ -155,8 +155,8 @@ class Message
     public function removeTraiter(Traiter $traiter): static
     {
         if ($this->traiters->removeElement($traiter)) {
-            if ($traiter->getMessage() === $this) {
-                $traiter->setMessage(null);
+            if ($traiter->getIdMessage() === $this) {
+                $traiter->setIdMessage(null);
             }
         }
 

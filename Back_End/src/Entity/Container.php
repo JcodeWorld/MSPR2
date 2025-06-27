@@ -20,26 +20,38 @@ class Container
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Designation_Container = null;
-
+    
     /**
+     * Relation avec Contenir (liaison avec PageWeb)
+     * Un Container peut être utilisé sur plusieurs pages
+     *
      * @var Collection<int, Contenir>
      */
-    #[ORM\OneToMany(targetEntity: Contenir::class, mappedBy: 'IdContainer')]
+    #[ORM\OneToMany(targetEntity: Contenir::class, mappedBy: 'IdContainer', orphanRemoval: true)]
     private Collection $contenirs;
 
-    #[ORM\ManyToOne(inversedBy: 'IdContainer')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?AssocierContenu $associerContenu = null;
+    /**
+     * Relation inverse avec AssocierContenu
+     * Un Container peut contenir plusieurs contenus via AssocierContenu
+     *
+     * @var Collection<int, AssocierContenu>
+     */
+    #[ORM\OneToMany(targetEntity: AssocierContenu::class, mappedBy: 'IdContainer', orphanRemoval: true)]
+    private Collection $associerContenus;
 
     /**
+     * Relation avec AssocierTarif
+     * Un Container peut être associé à plusieurs tarifs
+     *
      * @var Collection<int, AssocierTarif>
      */
-    #[ORM\OneToMany(targetEntity: AssocierTarif::class, mappedBy: 'IdContainer')]
+    #[ORM\OneToMany(targetEntity: AssocierTarif::class, mappedBy: 'IdContainer', orphanRemoval: true)]
     private Collection $associerTarifs;
 
     public function __construct()
     {
         $this->contenirs = new ArrayCollection();
+        $this->associerContenus = new ArrayCollection();
         $this->associerTarifs = new ArrayCollection();
     }
 
@@ -59,7 +71,6 @@ class Container
 
         return $this;
     }
-
     public function getDesignationContainer(): ?string
     {
         return $this->Designation_Container;
@@ -71,7 +82,6 @@ class Container
 
         return $this;
     }
-
     /**
      * @return Collection<int, Contenir>
      */
@@ -93,7 +103,6 @@ class Container
     public function removeContenir(Contenir $contenir): static
     {
         if ($this->contenirs->removeElement($contenir)) {
-            // set the owning side to null (unless already changed)
             if ($contenir->getIdContainer() === $this) {
                 $contenir->setIdContainer(null);
             }
@@ -101,15 +110,33 @@ class Container
 
         return $this;
     }
-
-    public function getAssocierContenu(): ?AssocierContenu
+    // Relation AssocierContenu
+    /**
+     * @return Collection<int, AssocierContenu>
+     */
+    public function getAssocierContenus(): Collection
     {
-        return $this->associerContenu;
+        return $this->associerContenus;
     }
 
-    public function setAssocierContenu(?AssocierContenu $associerContenu): static
+    public function addAssocierContenu(AssocierContenu $associerContenu): static
     {
-        $this->associerContenu = $associerContenu;
+        if (!$this->associerContenus->contains($associerContenu)) {
+            $this->associerContenus->add($associerContenu);
+            $associerContenu->setIdContainer(IdContainer: $this);
+            ;
+        }
+
+        return $this;
+    }
+
+    public function removeAssocierContenu(AssocierContenu $associerContenu): static
+    {
+        if ($this->associerContenus->removeElement($associerContenu)) {
+            if ($associerContenu->getIdContainer() === $this) {
+                $associerContenu->setIdContainer(null);
+            }
+        }
 
         return $this;
     }
@@ -135,7 +162,6 @@ class Container
     public function removeAssocierTarif(AssocierTarif $associerTarif): static
     {
         if ($this->associerTarifs->removeElement($associerTarif)) {
-            // set the owning side to null (unless already changed)
             if ($associerTarif->getIdContainer() === $this) {
                 $associerTarif->setIdContainer(null);
             }
