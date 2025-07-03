@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/style_commun.css"; // Assurez-vous d’ajouter vos styles ici
+import "../styles/style_commun.css";
 import logo from "../assets/logo-canopees.png";
 import hamburger_icon from "../assets/icone/Hamburger_icon.png";
 import Croix_Hamburger_icon from "../assets/icone/Croix_Hamburger_icon.png";

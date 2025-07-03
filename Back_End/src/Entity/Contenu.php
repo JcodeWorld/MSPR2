@@ -7,34 +7,43 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
+#[ApiResource(
+    normalizationContext: ['groups' => ['contenu:read']],
+    denormalizationContext: ['groups' => ['contenu:write']]
+)]
 #[ORM\Entity(repositoryClass: ContenuRepository::class)]
 class Contenu
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['contenu:read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['contenu:read', 'contenu:write'])]
     private ?string $Description_Contenu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['contenu:read', 'contenu:write'])]
     private ?string $Adresse_image_Contenu = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['contenu:read', 'contenu:write'])]
     private ?string $Contenu_texte_Contenu = null;
 
-    /**
-     * @var Collection<int, AssocierContenu>
-     */
-    #[ORM\OneToMany(targetEntity: AssocierContenu::class, mappedBy: 'IdContenu')]
+    #[ORM\OneToMany(targetEntity: AssocierContenu::class, mappedBy: 'IdContenu', orphanRemoval: true)]
+    #[Groups(['contenu:read'])]
+    #[MaxDepth(1)]
     private Collection $associerContenus;
 
-    /**
-     * @var Collection<int, ModifierContenu>
-     */
-    #[ORM\OneToMany(targetEntity: ModifierContenu::class, mappedBy: 'IdContenu')]
+    #[ORM\OneToMany(targetEntity: ModifierContenu::class, mappedBy: 'IdContenu', orphanRemoval: true)]
+    #[Groups(['contenu:read'])]
+    #[MaxDepth(1)]
     private Collection $modifierContenus;
 
     public function __construct()
@@ -56,7 +65,6 @@ class Contenu
     public function setDescriptionContenu(?string $Description_Contenu): static
     {
         $this->Description_Contenu = $Description_Contenu;
-
         return $this;
     }
 
@@ -65,10 +73,9 @@ class Contenu
         return $this->Adresse_image_Contenu;
     }
 
-    public function setAdresseImageContenu(string $Adresse_image_Contenu): static
+    public function setAdresseImageContenu(?string $Adresse_image_Contenu): static
     {
         $this->Adresse_image_Contenu = $Adresse_image_Contenu;
-
         return $this;
     }
 
@@ -80,7 +87,6 @@ class Contenu
     public function setContenuTexteContenu(?string $Contenu_texte_Contenu): static
     {
         $this->Contenu_texte_Contenu = $Contenu_texte_Contenu;
-
         return $this;
     }
 
@@ -105,7 +111,6 @@ class Contenu
     public function removeAssocierContenu(AssocierContenu $associerContenu): static
     {
         if ($this->associerContenus->removeElement($associerContenu)) {
-            // set the owning side to null (unless already changed)
             if ($associerContenu->getIdContenu() === $this) {
                 $associerContenu->setIdContenu(null);
             }
@@ -135,7 +140,6 @@ class Contenu
     public function removeModifierContenu(ModifierContenu $modifierContenu): static
     {
         if ($this->modifierContenus->removeElement($modifierContenu)) {
-            // set the owning side to null (unless already changed)
             if ($modifierContenu->getIdContenu() === $this) {
                 $modifierContenu->setIdContenu(null);
             }

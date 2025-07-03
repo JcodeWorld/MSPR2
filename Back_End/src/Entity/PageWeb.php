@@ -6,22 +6,33 @@ use App\Repository\PageWebRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: PageWebRepository::class)]
+#[ApiResource(
+    normalizationContext: ['groups' => ['pageweb:read']],
+    denormalizationContext: ['groups' => ['pageweb:write']]
+)]
 class PageWeb
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['pageweb:read', 'contenir:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['pageweb:read', 'pageweb:write', 'contenir:read'])]
     private ?string $Adresse_Url = null;
 
     /**
      * @var Collection<int, Contenir>
      */
-    #[ORM\OneToMany(targetEntity: Contenir::class, mappedBy: 'IdPageWeb')]
+    #[ORM\OneToMany(mappedBy: 'IdPageWeb', targetEntity: Contenir::class)]
+    #[Groups(['pageweb:read'])] // ⚠️ pas dans 'contenir:read' pour éviter boucle
+    #[MaxDepth(1)]
     private Collection $contenirs;
 
     public function __construct()
@@ -67,7 +78,6 @@ class PageWeb
     public function removeContenir(Contenir $contenir): static
     {
         if ($this->contenirs->removeElement($contenir)) {
-            // set the owning side to null (unless already changed)
             if ($contenir->getIdPageWeb() === $this) {
                 $contenir->setIdPageWeb(null);
             }
@@ -76,3 +86,4 @@ class PageWeb
         return $this;
     }
 }
+

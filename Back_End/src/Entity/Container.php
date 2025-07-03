@@ -6,46 +6,53 @@ use App\Repository\ContainerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use ApiPlatform\Metadata\ApiResource;
 
+#[ApiResource(
+    normalizationContext: ['groups' => ['container:read']],
+    denormalizationContext: ['groups' => ['container:write']]
+)]
 #[ORM\Entity(repositoryClass: ContainerRepository::class)]
 class Container
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['container:read', 'contenir:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['container:read', 'container:write', 'contenir:read'])]
     private ?string $Nom_Container = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['container:read', 'container:write', 'contenir:read'])]
     private ?string $Designation_Container = null;
-    
+
     /**
-     * Relation avec Contenir (liaison avec PageWeb)
-     * Un Container peut être utilisé sur plusieurs pages
-     *
-     * @var Collection<int, Contenir>
+     * Relation avec Contenir
      */
     #[ORM\OneToMany(targetEntity: Contenir::class, mappedBy: 'IdContainer', orphanRemoval: true)]
+    #[Groups(['container:read'])]
+    #[MaxDepth(1)]
     private Collection $contenirs;
 
     /**
-     * Relation inverse avec AssocierContenu
-     * Un Container peut contenir plusieurs contenus via AssocierContenu
-     *
-     * @var Collection<int, AssocierContenu>
+     * Relation avec AssocierContenu
      */
     #[ORM\OneToMany(targetEntity: AssocierContenu::class, mappedBy: 'IdContainer', orphanRemoval: true)]
+    #[Groups(['container:read'])]
+    #[MaxDepth(1)]
     private Collection $associerContenus;
 
     /**
      * Relation avec AssocierTarif
-     * Un Container peut être associé à plusieurs tarifs
-     *
-     * @var Collection<int, AssocierTarif>
      */
     #[ORM\OneToMany(targetEntity: AssocierTarif::class, mappedBy: 'IdContainer', orphanRemoval: true)]
+    #[Groups(['container:read'])]
+    #[MaxDepth(1)]
     private Collection $associerTarifs;
 
     public function __construct()
@@ -68,20 +75,20 @@ class Container
     public function setNomContainer(string $Nom_Container): static
     {
         $this->Nom_Container = $Nom_Container;
-
         return $this;
     }
+
     public function getDesignationContainer(): ?string
     {
         return $this->Designation_Container;
     }
 
-    public function setDesignationContainer(string $Designation_Container): static
+    public function setDesignationContainer(?string $Designation_Container): static
     {
         $this->Designation_Container = $Designation_Container;
-
         return $this;
     }
+
     /**
      * @return Collection<int, Contenir>
      */
@@ -110,7 +117,7 @@ class Container
 
         return $this;
     }
-    // Relation AssocierContenu
+
     /**
      * @return Collection<int, AssocierContenu>
      */
@@ -123,8 +130,7 @@ class Container
     {
         if (!$this->associerContenus->contains($associerContenu)) {
             $this->associerContenus->add($associerContenu);
-            $associerContenu->setIdContainer(IdContainer: $this);
-            ;
+            $associerContenu->setIdContainer($this);
         }
 
         return $this;
@@ -170,3 +176,4 @@ class Container
         return $this;
     }
 }
+
