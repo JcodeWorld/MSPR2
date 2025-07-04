@@ -52,6 +52,7 @@ final class ContenuPageController extends AbstractController
                 'pw.Adresse_Url AS urlPage',
                 'c.id AS idContainer',
                 'c.Nom_Container AS nomContainer',
+                'ctu.Description_Contenu AS description',
                 'ctu.Adresse_image_Contenu AS image',
                 'ctu.Contenu_texte_Contenu AS texte'
             )

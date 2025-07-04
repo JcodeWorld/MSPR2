@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import variables from "./assets/VariableGlobal";
 import useFetchData from "./api/useFetchData";
@@ -11,7 +12,6 @@ import CGU from "./pages/CGU";
 import CGV from "./pages/CGV";
 import Mention from "./pages/Mention";
 import Copyright from "./pages/Copyright";
-import { useEffect, useState } from "react";
 
 export default function App() {
   const url = `${variables.UrlBackEnd}/api/contenu/Toutepage`;
@@ -31,14 +31,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Accueil contenus={contenus} />} />
           <Route path="/Accueil" element={<Accueil contenus={contenus} />} />
-          <Route
-            path="/Qui_sommes_nous"
-            element={<Qui contenus={contenus} />}
-          />
-          <Route
-            path="/Prestations"
-            element={<Prestations contenus={contenus} />}
-          />
+          <Route path="/Qui_sommes_nous" element={<Qui contenus={contenus} />} />
+          <Route path="/Prestations" element={<Prestations contenus={contenus} />} />
           <Route path="/Tarifs" element={<Tarifs contenus={contenus} />} />
           <Route path="/Contact" element={<Contact contenus={contenus} />} />
           <Route path="/CGU" element={<CGU />} />

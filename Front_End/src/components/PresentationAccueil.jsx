@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/style_commun.css"; // Assurez-vous d’ajouter vos styles ici
 
-
 export default function PresentationAccueil({
   contenus /*Voir si on met en place prop-types */,
 }) {
@@ -9,18 +8,13 @@ export default function PresentationAccueil({
     const ExtractionContainer = contenu.filter(
       (item) => item.nomContainer === container
     );
-    console.log(ExtractionContainer);
-
     return ExtractionContainer.length > 0 ? ExtractionContainer[0].texte : null;
   }
   const AccueilPresentation = ExtractionTexte(contenus, "Accueil_presentation");
   const AccueilPrestation = ExtractionTexte(contenus, "Accueil_prestation");
   const AccueilMarketing = ExtractionTexte(contenus, "Accueil_marketing");
   const AccueilParticulier = ExtractionTexte(contenus, "Accueil_particulier");
-  const AccueilProfessionnel = ExtractionTexte(
-    contenus,
-    "Accueil_professionnel"
-  );
+  const AccueilProfessionnel = ExtractionTexte(contenus,"Accueil_professionnel");
   const AccueilCollectivite = ExtractionTexte(contenus, "Accueil_collectivite");
   return (
     <div>
