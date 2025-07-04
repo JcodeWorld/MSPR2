@@ -1,25 +1,57 @@
 <?php
 
+// namespace App\Controller;
+
+// use App\Repository\ContenuRepository;
+// use Doctrine\ORM\EntityManagerInterface;
+// use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+// use Symfony\Component\Routing\Attribute\Route;
+// use Symfony\Component\HttpFoundation\JsonResponse;
+// use Symfony\Component\HttpFoundation\Request;
+
+// final class ContenuPageController extends AbstractController
+// {
+//     #[Route('/api/contenu/Toutepage', name: 'api_contenu_page', methods: ['GET'])]public function getContenusParPage(Request $request, EntityManagerInterface $em): JsonResponse
+//     {
+//         $qb = $em->createQueryBuilder();
+//         $qb->select(
+//                 'pw.adresse_url AS nomPage','c.id AS idContainer','c.Nom_Container AS nomContainer',
+//                 'ctu.Adresse_image_Contenu AS image',
+//                 'ctu.Contenu_texte_Contenu AS texte'
+//             )
+//             ->from('App\Entity\Contenir', 'ctir')
+//             ->join('ctir.IdPageWeb', 'pw')
+//             ->join('ctir.IdContainer', 'c')
+//             ->join('c.associerContenus', 'assctu')
+//             ->join('assctu.IdContenu', 'ctu')
+//             ->where('pw.Adresse_Url = :url')
+//             ->setParameter('url', $url);
+
+//         $results = $qb->getQuery()->getArrayResult();
+
+//         return $this->json($results);
+//     }
+// }
+
 namespace App\Controller;
 
-use App\Repository\ContenuRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Attribute\Route;
 
 final class ContenuPageController extends AbstractController
 {
-    #[Route('/api/contenu/page', name: 'api_contenu_page', methods: ['GET'])]public function getContenusParPage(Request $request, EntityManagerInterface $em): JsonResponse
+    #[Route('/api/contenu/Toutepage', name: 'api_contenu_toute_page', methods: ['GET'])]
+    public function getContenusToutesPages(EntityManagerInterface $em): JsonResponse
     {
-        $url = $request->query->get('url');
-        if (!$url) {
-            return $this->json(['error' => 'Missing "url" query parameter'], 400);
-        }
         $qb = $em->createQueryBuilder();
+
         $qb->select(
-                'c.id AS idContainer','c.Nom_Container AS nomContainer',
+                'pw.id AS idPage',
+                'pw.Adresse_Url AS urlPage',
+                'c.id AS idContainer',
+                'c.Nom_Container AS nomContainer',
                 'ctu.Adresse_image_Contenu AS image',
                 'ctu.Contenu_texte_Contenu AS texte'
             )
@@ -27,9 +59,7 @@ final class ContenuPageController extends AbstractController
             ->join('ctir.IdPageWeb', 'pw')
             ->join('ctir.IdContainer', 'c')
             ->join('c.associerContenus', 'assctu')
-            ->join('assctu.IdContenu', 'ctu')
-            ->where('pw.Adresse_Url = :url')
-            ->setParameter('url', $url);
+            ->join('assctu.IdContenu', 'ctu');
 
         $results = $qb->getQuery()->getArrayResult();
 

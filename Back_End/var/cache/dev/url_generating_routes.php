@@ -52,6 +52,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'api_contenu_page' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusParPage'], [], [['text', '/api/contenu/page']], [], [], []],
-    'App\Controller\ContenuPageController::getContenusParPage' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusParPage'], [], [['text', '/api/contenu/page']], [], [], []],
+    'api_contenu_toute_page' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], [], [['text', '/api/contenu/Toutepage']], [], [], []],
+    'App\Controller\ContenuPageController::getContenusToutesPages' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], [], [['text', '/api/contenu/Toutepage']], [], [], []],
 ];

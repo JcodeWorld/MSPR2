@@ -15,7 +15,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/api/contenu/page' => [[['_route' => 'api_contenu_page', '_controller' => 'App\\Controller\\ContenuPageController::getContenusParPage'], null, ['GET' => 0], null, false, false, null]],
+        '/api/contenu/Toutepage' => [[['_route' => 'api_contenu_toute_page', '_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
