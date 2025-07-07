@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Caroussel from "../components/Caroussel";
+import Caroussel from "../components/Carrousel";
 import PresentationAccueil from "../components/PresentationAccueil";
 import Slider from "../components/Slider";
+import PropTypes from 'prop-types';
 import "../styles/style_accueil.css";
 
 export default function Accueil({ contenus }) {
@@ -22,3 +23,6 @@ export default function Accueil({ contenus }) {
     </div>
   );
 }
+Accueil.propTypes = {
+  contenus: PropTypes.array.isRequired,
+};

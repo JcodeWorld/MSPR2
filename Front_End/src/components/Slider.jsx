@@ -1,19 +1,15 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import ExtractionImage from "../utils/ExtractionImage";
+import PropTypes from 'prop-types';
 import "../styles/style_accueil.css";
 
 export default function Slider({contenus}){
   //Traitement data API
-    function ExtractionImage(contenu, container, nbImage) {
-    const ExtractionContainer = contenu.filter(
-      (item) => item.nomContainer === container
-    );
-    return ExtractionContainer.length > 0 ? ExtractionContainer.slice(0, nbImage): [];
-  }
   const AccueilSlider = ExtractionImage(contenus, "Accueil_slider",3);
-  console.log(AccueilSlider);
   
   // Slider
+  //demarrage slider auto
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
@@ -34,7 +30,7 @@ export default function Slider({contenus}){
     emblaApi.on("select", updateIndex);
     updateIndex();
 
-    // Slider automatique
+    // demarrage slider auto
     const id = setInterval(() => {
       if (!emblaApi) return;
       emblaApi.scrollNext();
@@ -44,15 +40,15 @@ export default function Slider({contenus}){
 
     return () => clearInterval(id);
   }, [emblaApi]);
-
+//contenu composant
   return (
     <section className="bg-white titre1_desktop w-100">
       <div className="slider_container" ref={emblaRef}>
-        <div className="embla__container">
+        <div className="embla__container_slider">
           {AccueilSlider.map((objet, index) => (
             <img
               key={objet.id || index}
-              className="embla__slide"
+              className="embla__slide_slider"
               src={objet.image}
               alt={objet.description || `Slide ${index + 1}`}
             />
@@ -83,4 +79,6 @@ export default function Slider({contenus}){
     </section>
   );
 };
-
+Slider.propTypes = {
+  contenus: PropTypes.array.isRequired,
+};

@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
-import "../styles/style_commun.css"; // Assurez-vous d’ajouter vos styles ici
+import PropTypes from 'prop-types';
+import ExtractionTexte from "../utils/ExtractionTexte";
+import "../styles/style_commun.css"; 
+
+
 
 export default function PresentationAccueil({
-  contenus /*Voir si on met en place prop-types */,
+  contenus,
 }) {
-  function ExtractionTexte(contenu, container) {
-    const ExtractionContainer = contenu.filter(
-      (item) => item.nomContainer === container
-    );
-    return ExtractionContainer.length > 0 ? ExtractionContainer[0].texte : null;
-  }
+  //Traitement data API
   const AccueilPresentation = ExtractionTexte(contenus, "Accueil_presentation");
   const AccueilPrestation = ExtractionTexte(contenus, "Accueil_prestation");
   const AccueilMarketing = ExtractionTexte(contenus, "Accueil_marketing");
   const AccueilParticulier = ExtractionTexte(contenus, "Accueil_particulier");
   const AccueilProfessionnel = ExtractionTexte(contenus,"Accueil_professionnel");
   const AccueilCollectivite = ExtractionTexte(contenus, "Accueil_collectivite");
+  // contenu composant
   return (
     <div>
       <section className="presentation_entreprise bg-white">
@@ -70,9 +70,9 @@ export default function PresentationAccueil({
         <span className="separateur_presentation"></span>
         <div className="services paragraphe_desktop">
           <h2 className="titre1_desktop mauve_text text-center mb-3">
-            Nos services s'adressent à qui ?
+            Nos services s&apos;adressent à qui ?
           </h2>
-          <ul className="listeService">
+          <div className="listeService">
             <h3 className="paragraphe_desktop bold_paragraphe mb-1">
               Particuliers
             </h3>
@@ -117,9 +117,12 @@ export default function PresentationAccueil({
                 Accueil_Collectivite
               </p>
             )}
-          </ul>
+          </div>
         </div>
       </section>
     </div>
   );
 }
+PresentationAccueil.propTypes = {
+  contenus: PropTypes.array.isRequired,
+};

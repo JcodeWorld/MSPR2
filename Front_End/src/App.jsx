@@ -25,6 +25,7 @@ export default function App() {
   if (loading) return <p>Chargement…</p>;
   if (error) return <p>Erreur : {error}</p>;
   if (!data || data.length === 0) return <p>Aucun contenu trouvé.</p>;
+ 
   return (
     <div>
       <main>
