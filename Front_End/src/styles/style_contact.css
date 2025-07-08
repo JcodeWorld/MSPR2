@@ -1,5 +1,5 @@
 @import "./style_commun.css";
-main{
+.global_contact{
   width: 100%;
   display: flex;
   padding: 2%!important;
@@ -48,6 +48,9 @@ form{
   .checkbox_formulaire p{
     font-size: 0.7rem !important;
   }
+  label {
+    margin-left: 8px!important;
+  }
 .adresse p{
  font-size: 0.8rem;
 }
@@ -56,7 +59,7 @@ input[type="submit"]:hover{
 }
 /* Media Queries */
 @media screen and (max-width: 1000px) {
-main{
+.global_contact{
     flex-direction: column !important;
 }
 .formulaire, .adresse{
