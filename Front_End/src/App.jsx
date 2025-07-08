@@ -12,29 +12,40 @@ import CGU from "./pages/CGU";
 import CGV from "./pages/CGV";
 import Mention from "./pages/Mention";
 import Copyright from "./pages/Copyright";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'; 
 
 export default function App() {
-  const url = `${variables.UrlBackEnd}/api/contenu/Toutepage`;
-  const { data, loading, error } = useFetchData(url);
+  const urlContenus = `${variables.UrlBackEnd}/api/contenu/Toutepage`;
+  const urlTarifs = `${variables.UrlBackEnd}/api/tarif`;
+
+  const { data: dataContenus, loading: loadingContenus, error: errorContenus } = useFetchData(urlContenus);
+  const { data: dataTarifs, loading: loadingTarifs, error: errorTarifs } = useFetchData(urlTarifs);
+
   const [contenus, setContenus] = useState([]);
+  const [tarifs, setTarifs] = useState([]);
+
   useEffect(() => {
-    if (data && data.length > 0) {
-      setContenus(data);
+    if (dataContenus?.length > 0) {
+      setContenus(dataContenus);
     }
-  }, [data]);
-  if (loading) return <p>Chargement…</p>;
-  if (error) return <p>Erreur : {error}</p>;
-  if (!data || data.length === 0) return <p>Aucun contenu trouvé.</p>;
- 
+  }, [dataContenus]);
+
+  useEffect(() => {
+    if (dataTarifs?.length > 0) {
+      setTarifs(dataTarifs);
+    }
+  }, [dataTarifs]);
+
+  if (loadingContenus || loadingTarifs) return <p>Chargement…</p>;
+  if (errorContenus || errorTarifs) return <p>Erreur : {errorContenus || errorTarifs}</p>;
+  if (contenus.length === 0 || tarifs.length === 0) return <p>Données manquantes.</p>;
   return (
-    <div>
-      <main>
         <Routes>
           <Route path="/" element={<Accueil contenus={contenus} />} />
           <Route path="/Accueil" element={<Accueil contenus={contenus} />} />
           <Route path="/Qui_sommes_nous" element={<Qui contenus={contenus} />} />
           <Route path="/Prestations" element={<Prestations contenus={contenus} />} />
-          <Route path="/Tarifs" element={<Tarifs contenus={contenus} />} />
+          <Route path="/Tarifs" element={<Tarifs tarifs={tarifs} />} />
           <Route path="/Contact" element={<Contact contenus={contenus} />} />
           <Route path="/CGU" element={<CGU />} />
           <Route path="/CGV" element={<CGV />} />
@@ -42,7 +53,5 @@ export default function App() {
           <Route path="/Copyright" element={<Copyright />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </main>
-    </div>
   );
 }

@@ -1,35 +1,182 @@
 @import "./style_commun.css";
 /* Prestations */
-/* Navbar Desktop */
-#navbar_desktop{
-  position : relative !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-}
-main {
-  margin:0% !important;
-  padding: 2% !important;
-  position: relative !important;
-}
-.container_global {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  margin-top: -5% !important;
+ .container_global {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container_image {
-  display: flex !important;
-  justify-content: center !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: repeat(3, auto); */
+  width: 100%;
+  min-width: 1100px;
+  min-height: 1200px;
 }
 .card {
-  width: 400px !important;
-  height: 400px !important;
-  border-radius: 50% !important;
-  background-position: center !important;
-  background-size: cover !important;
-  position: relative !important;
+  position: relative!important;
+  display: flex!important;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 100%!important;
+  border: none !important;
+  background: none!important;
+  box-shadow: none!important;
 }
-.modal_entete h2 {
+.card img {
+  position: absolute!important;
+  width:100%;
+  max-width: 400px !important;
+  max-height: 400px !important;
+  object-fit: cover!important;
+  border-radius: 50%!important;
+}
+.text_prestation {
+position: absolute;
+bottom: 15%!important;
+left: 5%!important;
+background-color: rgba(34, 139, 34, 0.8);
+color: white;
+padding: 15px !important;
+font-weight: bold;
+border-radius: 5px;
+width: 70%!important;
+min-height: 66px !important;
+text-align: center;
+z-index: 1;
+margin-left: 10% !important;
+}
+.bouton_desktop_prestation {
+position: absolute;
+top: 0%!important;
+min-width: 35% !important;
+text-align: center;
+color: #b23b53;
+background-color: #f1a80f;
+  border-radius: 8px;
+  font-family: "Montserrat", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.3rem;
+  letter-spacing: 0em;
+  padding: 8px 25px !important;
+  -webkit-text-stroke: 0.02rem black;
+  text-shadow: 1px 2px 3px black;
+}
+.card1 {
+  grid-column: 2;
+  grid-row: 1;
+  transform: translate(0%,10%)!important;
+}
+.card2 {
+  grid-column: 1;
+  grid-row: 2;
+  transform: translate(25%,-15%)!important;
+}
+.card3{
+  grid-column: 3;
+  grid-row: 2;
+  transform: translate(-25%,-15%)!important;
+}
+.card4 {
+  grid-column: 1;
+  grid-row: 3;
+  transform: translate(45%,-15%)!important;
+}
+.card5 {
+  grid-column: 3;
+  grid-row: 3;
+  transform: translate(-45%,-15%)!important;
+}
+.modal {
+  background-color: #fff!important;
+  /* padding: 20px!important; */
+  border-radius: 10px!important;
+  width: 800px!important;
+  /* max-width: 800px!important; */
+  /* max-height: 90vh!important;  */
+  /* overflow-y: auto!important; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)!important;
+  /* position: absolute!important; */
+  /* top: 0%!important; */
+  /* left:0%!important; */
+} 
+.modal-body{
+  display: grid!important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important;
+  gap: 12px!important;
+  overflow: visible!important;
+}
+.modal-body img{
+  width: 100%!important;
+  height: auto!important;
+  border-radius: 6px!important;
+  object-fit: cover!important;
+}
+.modal-content {
+  /* position: fixed !important; */
+  /* top: 50%;
+  left: 50%; */
+  /* width: 100vw !important;
+  height: 100vh !important; */
+  /* display: flex !important;
+  justify-content: center !important;
+  align-items: center !important; */
+  /* background-color: rgba(0, 0, 0, 1)!important; */
+  /* z-index: 9999!important; */
+}
+/* .modal-overlay {
+  border: 5px solid red;
+} */
+
+/* .modal {
+  border: 5px solid blue;
+} */
+/* .modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+} */
+
+/* .modal_entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+} */
+
+/* .modal_entete h2 {
+  margin: 0;
+  color: #005b96;
+} */
+/* 
+.croix_Modal {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+} */
+
+/* .modal_content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+} */
+
+/* .Modal_Image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+} */
+
+
+/* .modal_entete h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 10px !important;
@@ -41,17 +188,14 @@ main {
   cursor: pointer;
 }
 .modal {
-  position: absolute !important;
+  /* position: absolute !important;
   left: 50% !important;
-  top: 50% !important;
-  width: 800px !important;
+  top: 50% !important; */
+  /* width: 800px !important;
   height: 420px !important;
   background-color: black;
   transform: translate(-50%, -50%) !important;
   z-index: 2 !important;
-}
-.modal_content {
-  width: 100%;
 }
 .modal_content {
   width: 100% !important;
@@ -70,73 +214,33 @@ main {
   min-width: 100% !important;
   object-fit: cover !important;
   padding: 1px !important;
-}
-.vide {
-  width: 20% !important;
-}
-.une {
-  background-image: url(../ressource/Prestation/Conception.png);
-  top: 6rem !important;
-}
-.deux {
-  background-image: url(../ressource/Prestation/Entretien.png);
-  right: -2rem !important;
-}
-.trois {
-  background-image: url(../ressource/Prestation/Taille\ haie.png);
-  left: -2rem !important;
-}
-.quatre {
-  background-image: url(../ressource/Prestation/Compost.png);
-  right: 0.5rem !important;
-}
-.cinq {
-  background-image: url(../ressource/Prestation/Elagage.png);
-  left: 0.5rem !important;
-}
-.text {
-  position: absolute;
-  bottom: 25px;
-  background-color: rgba(34, 139, 34, 0.8);
-  color: white;
-  padding: 15px !important;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  width: 80%;
-  text-align: center;
-  z-index: 1;
-  margin-left: 10% !important;
-}
-#footer{
-  position : relative !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-}
+}  */
 @media screen and (max-width: 1000px) {
-  #navbar_desktop{
-    position : relative !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-  }
-  main {
-      margin: 0% !important;
-      padding-top: 110px !important;
-      position: relative !important;
-  }
   .container_image {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
+ grid-template-columns: 1fr;
+ height: fit-content!important;
+}
   .card {
     margin-top: 1% !important;
-    width: 300px !important;
-    height: 300px !important;
+    width: 400px !important;
+    height: 400px !important;
   }
-  .modal_entete h2 {
+  .text_prestation {
+    width: 30%!important;
+   left: 25%!important;
+  }
+  .bouton_desktop_prestation {
+    min-width: 15% !important;
+  }
+.card{
+ grid-column: 1;
+ grid-row: auto;
+transform: translate(0%,0%)!important;
+}
+  /* .modal_entete h2 {
     text-align: start;
-  }
-  .modal {
+  } */
+  /* .modal {
     position: absolute !important;
     left: 50% !important;
     top: 50% !important;
@@ -171,5 +275,5 @@ main {
   }
   .cinq {
     left: 0 !important;
-  }
+  } */
 }

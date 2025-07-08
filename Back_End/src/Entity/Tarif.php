@@ -6,6 +6,7 @@ use App\Repository\TarifRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: TarifRepository::class)]
 class Tarif
@@ -13,12 +14,15 @@ class Tarif
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['container:read', 'tarif:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['container:read', 'tarif:read'])]
     private ?string $Designation_Tarif = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['container:read', 'tarif:read'])]
     private ?string $Prix_Tarif = null;
 
     /**

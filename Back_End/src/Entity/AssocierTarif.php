@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AssocierTarifRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: AssocierTarifRepository::class)]
 class AssocierTarif
@@ -11,14 +12,17 @@ class AssocierTarif
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['container:read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'associerTarifs')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['container:read'])]
     private ?Container $IdContainer = null;
 
     #[ORM\ManyToOne(inversedBy: 'associerTarifs')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['container:read', 'tarif:read'])]
     private ?Tarif $IdTarif = null;
 
     public function getId(): ?int

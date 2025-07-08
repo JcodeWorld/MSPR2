@@ -12,7 +12,6 @@
 .Tarif{
   width:31%!important;
   height:325px!important;
-  background-color:#f1f5f275 !important;
   margin: 1%!important;
   padding: 1% !important;
   border-radius: 10px !important;
@@ -21,6 +20,9 @@
 }
 table{
   width: 100% !important;
+}
+tr, td, th {
+  background: rgba(0, 0, 0, 0)!important;
 }
 .colPrestation{
   width: 75% !important;

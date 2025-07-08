@@ -16,11 +16,11 @@ export default function Accueil({ contenus }) {
   }, [contenus]);
 
   return (
-    <div>
+  <>
       <Slider contenus={accueilContenu} />
       <PresentationAccueil contenus={accueilContenu} />
       <Caroussel contenus={accueilContenu} />
-    </div>
+</>
   );
 }
 Accueil.propTypes = {

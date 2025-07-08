@@ -53,5 +53,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'api_contenu_toute_page' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], [], [['text', '/api/contenu/Toutepage']], [], [], []],
+    'api_tarif' => [[], ['_controller' => 'App\\Controller\\TarifPageController::getTarif'], [], [['text', '/api/tarif']], [], [], []],
     'App\Controller\ContenuPageController::getContenusToutesPages' => [[], ['_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], [], [['text', '/api/contenu/Toutepage']], [], [], []],
+    'App\Controller\TarifPageController::getTarif' => [[], ['_controller' => 'App\\Controller\\TarifPageController::getTarif'], [], [['text', '/api/tarif']], [], [], []],
 ];
