@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Message;
 use App\Entity\Tarif;
 use App\Entity\Contenu;
 use App\Entity\ModifierTarif;
@@ -37,6 +38,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Gestion principale');
         yield MenuItem::linkToCrud('Tarifs', 'fas fa-euro-sign', Tarif::class);
         yield MenuItem::linkToCrud('Contenus', 'fas fa-file-alt', Contenu::class);
+
+        yield MenuItem::section('Gestion message');
+        yield MenuItem::linkToCrud('Message', 'fas fa-file-alt', Message::class);
 
         yield MenuItem::section('Historique des modifications');
         yield MenuItem::linkToCrud('Modifications des Tarifs', 'fas fa-history', ModifierTarif::class);
