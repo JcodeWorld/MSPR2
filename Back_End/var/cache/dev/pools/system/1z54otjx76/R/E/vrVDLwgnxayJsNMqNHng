@@ -95,5 +95,15 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_user_admin_delete',
             'detail' => 'admin_user_admin_detail',
         ],
+        'App\\Controller\\Admin\\UserCrudController' => [
+            'index' => 'admin_user_index',
+            'new' => 'admin_user_new',
+            'batchDelete' => 'admin_user_batch_delete',
+            'autocomplete' => 'admin_user_autocomplete',
+            'renderFilters' => 'admin_user_render_filters',
+            'edit' => 'admin_user_edit',
+            'delete' => 'admin_user_delete',
+            'detail' => 'admin_user_detail',
+        ],
     ],
 ]];

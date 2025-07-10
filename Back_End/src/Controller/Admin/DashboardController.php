@@ -7,6 +7,7 @@ use App\Entity\Tarif;
 use App\Entity\Contenu;
 use App\Entity\ModifierTarif;
 use App\Entity\ModifierContenu;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,6 +42,9 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Gestion message');
         yield MenuItem::linkToCrud('Message', 'fas fa-file-alt', Message::class);
+
+        yield MenuItem::section('Gestion profil');
+        yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user-alt', User::class);
 
         yield MenuItem::section('Historique des modifications');
         yield MenuItem::linkToCrud('Modifications des Tarifs', 'fas fa-history', ModifierTarif::class);

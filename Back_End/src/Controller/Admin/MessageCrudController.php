@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 class MessageCrudController extends AbstractCrudController
 {
@@ -22,7 +23,20 @@ class MessageCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->onlyOnIndex(),
-            TextField::new('Statut_Message', 'Statut'),
+            
+ChoiceField::new('Statut_Message', 'Statut')
+    ->setChoices([
+        'À traiter' => 'A_Traiter',
+        'Traité' => 'Traité',
+        'À supprimer' => 'A_Supprimer',
+    ])
+    ->renderExpanded(false)
+    ->renderAsBadges([
+        'A_Traiter' => 'warning',
+        'Traité' => 'success',
+        'A_Supprimer' => 'danger',
+    ]),
+
             TextField::new('Nom_Message', 'Nom'),
             TextField::new('Prenom_Message', 'Prenom'),
             TextField::new('Adresse_Message', 'Adresse'),

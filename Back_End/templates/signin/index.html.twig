@@ -1,0 +1,42 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <img src="{{ asset('logo-canopees.png') }}" alt="Logo Canopees" style="max-width: 200px;">
+    </div>
+
+    <h1 class="mb-4 text-center">Inscription</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('unsuccess') %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {{ form_start(form) }}
+
+                {{ form_row(form.email) }}
+                {{ form_row(form.password) }}
+                {{ form_row(form.Prenom) }}
+                {{ form_row(form.Nom) }}
+                {{ form_row(form.Adresse) }}
+                {{ form_row(form.save) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
