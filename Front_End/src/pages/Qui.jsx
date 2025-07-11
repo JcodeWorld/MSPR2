@@ -4,10 +4,11 @@ import "../styles/style_qui_sommes_nous.css";
 import PropTypes from "prop-types";
 
 export default function Qui({contenus}) {
+ console.log(contenus);
  
   //Traitement data API
-const QuiNomProfil1 = ExtractionTexte(contenus, "Qui_ Nom _profil_1");
-const QuiNomProfil2 = ExtractionTexte(contenus, "Qui_ Nom _profil_2");
+const QuiNomProfil1 = ExtractionTexte(contenus, "Qui_Nom_profil_1");
+const QuiNomProfil2 = ExtractionTexte(contenus, "Qui_Nom_profil_2");
 const QuiTexteProfil1 = ExtractionTexte(contenus, "Qui_Contenu_profil_1");
 const QuiTexteProfil2 = ExtractionTexte(contenus, "Qui_Contenu_profil_2");
 const PhotoProfil1 = ExtractionImage(contenus, "Qui_Contenu_profil_1", 1);

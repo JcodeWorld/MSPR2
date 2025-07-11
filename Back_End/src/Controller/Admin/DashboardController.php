@@ -5,8 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Message;
 use App\Entity\Tarif;
 use App\Entity\Contenu;
-use App\Entity\ModifierTarif;
-use App\Entity\ModifierContenu;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +21,7 @@ class DashboardController extends AbstractDashboardController
         // Redirection vers une page CRUD spécifique (ex: Tarif)
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
 
-        return $this->redirect($adminUrlGenerator->setController(TarifCrudController::class)->generateUrl());
+        return $this->redirect($adminUrlGenerator->setController(MessageCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -36,18 +34,16 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home');
 
-        yield MenuItem::section('Gestion principale');
+        yield MenuItem::section('Gestion message');
+        yield MenuItem::linkToCrud('Message', 'fas fa-file-alt', Message::class);
+
+        yield MenuItem::section('Gestion site');
         yield MenuItem::linkToCrud('Tarifs', 'fas fa-euro-sign', Tarif::class);
         yield MenuItem::linkToCrud('Contenus', 'fas fa-file-alt', Contenu::class);
 
-        yield MenuItem::section('Gestion message');
-        yield MenuItem::linkToCrud('Message', 'fas fa-file-alt', Message::class);
 
         yield MenuItem::section('Gestion profil');
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user-alt', User::class);
 
-        yield MenuItem::section('Historique des modifications');
-        yield MenuItem::linkToCrud('Modifications des Tarifs', 'fas fa-history', ModifierTarif::class);
-        yield MenuItem::linkToCrud('Modifications des Contenus', 'fas fa-history', ModifierContenu::class);
     }
 }

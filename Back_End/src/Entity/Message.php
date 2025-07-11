@@ -3,50 +3,53 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
+#[ApiResource(
+    normalizationContext: ['groups' => ['message:read']],
+    denormalizationContext: ['groups' => ['message:write']]
+)]
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['message:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Nom_Message = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Prenom_Message = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Adresse_Message = null;
 
     #[ORM\Column(length: 150)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Adresse_mail_Message = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Telephone_Message = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Texte_Message = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['message:read', 'message:write'])]
     private ?string $Statut_Message = null;
-
-    /**
-     * @var Collection<int, Traiter>
-     */
-    #[ORM\OneToMany(targetEntity: Traiter::class, mappedBy: 'IdMessage')]
-    private Collection $traiters;
-
-    public function __construct()
-    {
-        $this->traiters = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -133,32 +136,6 @@ class Message
     public function setStatutMessage(string $Statut_Message): static
     {
         $this->Statut_Message = $Statut_Message;
-
-        return $this;
-    }
-
-  public function getTraiters(): Collection
-    {
-        return $this->traiters;
-    }
-
-    public function addTraiter(Traiter $traiter): static
-    {
-        if (!$this->traiters->contains($traiter)) {
-            $this->traiters[] = $traiter;
-            $traiter->setIdMessage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTraiter(Traiter $traiter): static
-    {
-        if ($this->traiters->removeElement($traiter)) {
-            if ($traiter->getIdMessage() === $this) {
-                $traiter->setIdMessage(null);
-            }
-        }
 
         return $this;
     }

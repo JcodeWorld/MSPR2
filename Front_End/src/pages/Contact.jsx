@@ -41,7 +41,7 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setStatus("Message envoyé avec succès !");
+        setStatus("C'est envoyé, nous vous répondons dans les plus brefs délais !");
         setFormData({
           nom: "",
           prenom: "",
@@ -54,11 +54,11 @@ export default function Contact() {
           cgu: false,
         });
       } else {
-        setStatus("Une erreur est survenue.");
+        setStatus("⚠️ Nous sommes désolés,Une erreur est survenue.Veuillez réessayer plus tard.");
       }
     } catch (error) {
       console.error(error);
-      setStatus("Erreur réseau.");
+      setStatus("⚠️ Nous sommes désolés, nous avons un problème réseau. Veuillez réessayer plus tard.");
     }
   };
 
@@ -113,9 +113,9 @@ export default function Contact() {
         </div>
         <div className="mt-4">
           <input className="bouton_desktop m-4" type="submit" value="Envoyer ⮞" />
-          {status && <p style={{ color: "red" }}>{status}</p>}
-        </div>
+          </div>
       </form>
+      {status && <p style={{ color: "red" }}>{status}</p>}
     </div><span className="separateur_presentation"></span><div className="adresse paragraphe_desktop mt-5">
         <div className="ps-4">
           <h2 className="titre2_desktop">Canopées</h2>

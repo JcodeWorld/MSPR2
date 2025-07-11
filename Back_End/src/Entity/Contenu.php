@@ -41,15 +41,9 @@ class Contenu
     #[MaxDepth(1)]
     private Collection $associerContenus;
 
-    #[ORM\OneToMany(targetEntity: ModifierContenu::class, mappedBy: 'IdContenu', orphanRemoval: true)]
-    #[Groups(['contenu:read'])]
-    #[MaxDepth(1)]
-    private Collection $modifierContenus;
-
     public function __construct()
     {
         $this->associerContenus = new ArrayCollection();
-        $this->modifierContenus = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -118,33 +112,5 @@ class Contenu
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, ModifierContenu>
-     */
-    public function getModifierContenus(): Collection
-    {
-        return $this->modifierContenus;
-    }
-
-    public function addModifierContenu(ModifierContenu $modifierContenu): static
-    {
-        if (!$this->modifierContenus->contains($modifierContenu)) {
-            $this->modifierContenus->add($modifierContenu);
-            $modifierContenu->setIdContenu($this);
-        }
-
-        return $this;
-    }
-
-    public function removeModifierContenu(ModifierContenu $modifierContenu): static
-    {
-        if ($this->modifierContenus->removeElement($modifierContenu)) {
-            if ($modifierContenu->getIdContenu() === $this) {
-                $modifierContenu->setIdContenu(null);
-            }
-        }
-
-        return $this;
-    }
+   
 }

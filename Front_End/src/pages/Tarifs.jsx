@@ -9,7 +9,7 @@ export default function Tarifs({ tarifs }) {
   const TarifEtude = ExtractionTarif(tarifs, "Tarif_Etude");
   const TarifPreparation = ExtractionTarif(tarifs, "Tarif_Preparation");
   const TarifPlantation = ExtractionTarif(tarifs, "Tarif_Plantation");
-  const TarifAmenagement = ExtractionTarif(tarifs, "Tarif_Aménagement");
+  const TarifAmenagement = ExtractionTarif(tarifs, "Tarif_Amenagement");
   const TarifAbattage = ExtractionTarif(tarifs, "Tarif_Abattage");
   const TarifEntretien = ExtractionTarif(tarifs, "Tarif_Entretien");
   return (

@@ -6,7 +6,13 @@ use App\Repository\TarifRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+#[ApiResource(
+    normalizationContext: ['groups' => ['tarif:read']],
+    denormalizationContext: ['groups' => ['tarif:write']]
+)]
 
 #[ORM\Entity(repositoryClass: TarifRepository::class)]
 class Tarif
@@ -14,33 +20,28 @@ class Tarif
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['container:read', 'tarif:read'])]
+    #[Groups(['tarif:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['container:read', 'tarif:read'])]
+    #[Groups(['tarif:read', 'tarif:write'])]
     private ?string $Designation_Tarif = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['container:read', 'tarif:read'])]
+    #[Groups(['tarif:read', 'tarif:write'])]
     private ?string $Prix_Tarif = null;
 
     /**
      * @var Collection<int, AssocierTarif>
      */
     #[ORM\OneToMany(targetEntity: AssocierTarif::class, mappedBy: 'IdTarif')]
+      #[Groups(['tarif:read'])]
+    #[MaxDepth(1)]
     private Collection $associerTarifs;
-
-    /**
-     * @var Collection<int, ModifierTarif>
-     */
-    #[ORM\OneToMany(targetEntity: ModifierTarif::class, mappedBy: 'IdTarif')]
-    private Collection $modifierTarifs;
-
+   
     public function __construct()
     {
         $this->associerTarifs = new ArrayCollection();
-        $this->modifierTarifs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -102,32 +103,4 @@ class Tarif
         return $this;
     }
 
-    /**
-     * @return Collection<int, ModifierTarif>
-     */
-   public function getModifierTarifs(): Collection
-{
-    return $this->modifierTarifs;
-}
-
-public function addModifierTarif(ModifierTarif $modifierTarif): static
-{
-    if (!$this->modifierTarifs->contains($modifierTarif)) {
-        $this->modifierTarifs->add( $modifierTarif);
-        $modifierTarif->setIdTarif($this);
-    }
-
-    return $this;
-}
-
-public function removeModifierTarif(ModifierTarif $modifierTarif): static
-{
-    if ($this->modifierTarifs->removeElement($modifierTarif)) {
-        if ($modifierTarif->getIdTarif() === $this) {
-            $modifierTarif->setIdTarif(null);
-        }
-    }
-
-    return $this;
-}
 }

@@ -4,7 +4,13 @@ namespace App\Entity;
 
 use App\Repository\AssocierTarifRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+#[ApiResource(
+    normalizationContext: ['groups' => ['associertarif:read']],
+    denormalizationContext: ['groups' => ['associertarif:write']]
+)]
 
 #[ORM\Entity(repositoryClass: AssocierTarifRepository::class)]
 class AssocierTarif
@@ -12,17 +18,19 @@ class AssocierTarif
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['container:read'])]
+    #[Groups(['associertarif:read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'associerTarifs')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['container:read'])]
+    #[Groups(['associertarif:read','associertarif:write'])]
+    #[MaxDepth(1)]
     private ?Container $IdContainer = null;
 
     #[ORM\ManyToOne(inversedBy: 'associerTarifs')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['container:read', 'tarif:read'])]
+    #[Groups(['associertarif:read', 'associertarif:write'])]
+    #[MaxDepth(1)]
     private ?Tarif $IdTarif = null;
 
     public function getId(): ?int
