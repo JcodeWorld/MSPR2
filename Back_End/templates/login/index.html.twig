@@ -2,31 +2,48 @@
 
 {% block body %}
 <div class="text-center mb-4">
-        <img src="{{ asset('logo-canopees.png') }}" alt="Logo Canopees" style="max-width: 200px;">
+    <img src="{{ asset('logo-canopees.png') }}" alt="Logo Canopees" style="max-width: 200px;">
+</div>
+
+<h1 class="mb-4 text-center">Connexion</h1>
+
+{% if error %}
+    <div class="alert alert-danger text-center">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
     </div>
+{% endif %}
 
-    <h1 class="mb-4 text-center">Connexion</h1>
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+<form class="text-start ms-5 d-flex justify-content-center" action="{{ path('app_login') }}" method="post">
+    <div class="w-25">
+        <div class="mb-3">
+            <label for="username">Email :</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required class="form-control">
+        </div>
 
-    <form class="text-start ms-5 d-flex justify-content-center" action="{{ path('app_login') }}" method="post">
-<div class="w-25 d-flex justify-content-center">
-<div>    
-        <label for="username">Email:</label>
-        <br>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" required>
-<div/>  
-<div class="mt-4">   
-        <label for="password">Password:</label>
-        <br>
-        <input type="password" id="password" name="_password" required>
+        <div class="mb-3">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="_password" required class="form-control">
+        </div>
 
         <input type="hidden" name="_target_path" value="/admin">
-<div/>  
-<div class="mt-5 d-flex justify-content-center">
-        <button class="btn btn-primary" type="submit">Connexion</button>
-<div/>
-    </form>
 
+        <div class="mt-4 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">Connexion</button>
+        </div>
+    </div>
+</form>
+
+<hr class="my-5">
+
+<div class="ms-5">
+    <p>
+        Vous pouvez vous connecter à la page d'administration. <br>
+        Mais il est nécessaire de vous inscrire et d’obtenir les droits administrateur accordés par l’administrateur du site.
+    </p>
+    <div class="d-flex align-items-center">
+        <span>Pour accéder au menu d'inscription :</span>
+        <a class="btn btn-outline-primary ms-2" href="{{ path('app_signin') }}">Inscription</a>
+    </div>
+</div>
 {% endblock %}
+

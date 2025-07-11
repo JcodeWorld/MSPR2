@@ -689,6 +689,7 @@
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <tag name="container.error" message="Cannot autowire service &quot;App\Controller\Admin\UserCrudController&quot;: argument &quot;$security&quot; of method &quot;__construct()&quot; has type &quot;Symfony\Component\Security\Core\Security&quot; but this class was not found."/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.5PWTx9U.App\Controller\Admin\UserCrudController"/>
       </call>
@@ -705,6 +706,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ContenuPageController"/>
+      </call>
+    </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\HomeController"/>
       </call>
     </service>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
@@ -7529,7 +7537,15 @@
         </service>
       </argument>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.SVK5D2B"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -7944,7 +7960,7 @@
       <argument>null</argument>
       <argument type="collection">
         <argument key="path">app_logout</argument>
-        <argument key="target">app_login</argument>
+        <argument key="target">app_home</argument>
         <argument key="enable_csrf">null</argument>
         <argument key="csrf_token_id">logout</argument>
         <argument key="csrf_parameter">_csrf_token</argument>
@@ -7993,7 +8009,7 @@
     <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>app_login</argument>
+      <argument>app_home</argument>
     </service>
     <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
@@ -8023,8 +8039,8 @@
       <call method="setOptions">
         <argument type="collection">
           <argument key="login_path">app_login</argument>
+          <argument key="default_target_path">app_home</argument>
           <argument key="always_use_default_target_path">false</argument>
-          <argument key="default_target_path">/</argument>
           <argument key="target_path_parameter">_target_path</argument>
           <argument key="use_referer">false</argument>
         </argument>
@@ -8106,6 +8122,14 @@
       <argument type="collection">
         <argument key="security.firewall.map.context.dev" type="service_closure" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.pqyCXG8" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.SVK5D2B" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.pqyCXG8"/>
       </argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">
@@ -9983,6 +10007,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\ContenuPageController.0.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\HomeController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\LoginController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
@@ -13431,6 +13459,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\LoginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LoginController"/>
       <argument>App\Controller\LoginController</argument>
@@ -13725,6 +13759,7 @@
           <argument>App\Controller\Admin\UserCrudController</argument>
           <argument>App\Controller\ContactController</argument>
           <argument>App\Controller\ContenuPageController</argument>
+          <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\LoginController</argument>
           <argument>App\Controller\LogoutController</argument>
           <argument>App\Controller\SigninController</argument>

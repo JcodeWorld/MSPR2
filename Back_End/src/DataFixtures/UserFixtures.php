@@ -17,7 +17,7 @@ class UserFixtures extends Fixture
             // Création du profil
             $user = new User();
             $user->setEmail($faker->email());
-            $user->setRoles(["admin"]);
+            $user->setRoles(["ROLE_USER"]);
             $user->setPassword(password_hash('password', PASSWORD_BCRYPT));
             $user->setPrenom($faker->firstName());
             $user->setNom($faker->lastName());

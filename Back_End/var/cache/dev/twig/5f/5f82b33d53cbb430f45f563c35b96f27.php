@@ -165,6 +165,10 @@ class __TwigTemplate_b4bf6dd79a69ee707663a7d6dab50798 extends Template
         </div>
     </div>
 </div>
+<p>Déjà inscrit ? <a href=\"";
+        // line 41
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        yield "\">Retour à la connexion</a></p>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -196,7 +200,7 @@ class __TwigTemplate_b4bf6dd79a69ee707663a7d6dab50798 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  163 => 37,  158 => 35,  154 => 34,  150 => 33,  146 => 32,  142 => 31,  138 => 30,  133 => 28,  128 => 25,  118 => 21,  115 => 20,  111 => 19,  108 => 18,  98 => 14,  95 => 13,  91 => 12,  83 => 7,  79 => 5,  66 => 4,  55 => 2,  53 => 1,  40 => 2,);
+        return array (  170 => 41,  163 => 37,  158 => 35,  154 => 34,  150 => 33,  146 => 32,  142 => 31,  138 => 30,  133 => 28,  128 => 25,  118 => 21,  115 => 20,  111 => 19,  108 => 18,  98 => 14,  95 => 13,  91 => 12,  83 => 7,  79 => 5,  66 => 4,  55 => 2,  53 => 1,  40 => 2,);
     }
 
     public function getSourceContext(): Source
@@ -241,6 +245,7 @@ class __TwigTemplate_b4bf6dd79a69ee707663a7d6dab50798 extends Template
         </div>
     </div>
 </div>
+<p>Déjà inscrit ? <a href=\"{{ path('app_login') }}\">Retour à la connexion</a></p>
 {% endblock %}
 
 ", "signin/index.html.twig", "F:\\C-DOSSIER JEROME\\INFORMATIQUE\\formation developpeur Web\\Cours programmation\\Exercice\\MSPR2\\Back_End\\templates\\signin\\index.html.twig");

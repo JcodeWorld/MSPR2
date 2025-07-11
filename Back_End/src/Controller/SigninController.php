@@ -20,7 +20,7 @@ final class SigninController extends AbstractController
         UserPasswordHasherInterface $passwordHasher
     ): Response {
         $user = new User();
-        $user->setRoles(["Utilisateur"]);
+        $user->setRoles(["ROLE_USER"]);
         $form = $this->createForm(SigninType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted()){

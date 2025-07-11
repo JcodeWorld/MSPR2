@@ -68,6 +68,7 @@ return [
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/api/contact' => [[['_route' => 'api_contact', '_controller' => 'App\\Controller\\ContactController::contact'], null, ['POST' => 0], null, false, false, null]],
         '/api/contenu/Toutepage' => [[['_route' => 'api_contenu_toute_page', '_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], null, ['GET' => 0], null, false, false, null]],
+        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\LogoutController::logout'], null, null, null, false, false, null]],
         '/signin' => [[['_route' => 'app_signin', '_controller' => 'App\\Controller\\SigninController::index'], null, null, null, false, false, null]],

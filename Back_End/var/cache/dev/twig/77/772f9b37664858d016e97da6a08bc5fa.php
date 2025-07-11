@@ -57,24 +57,20 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
 
-    ";
-        // line 8
-        yield "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
     
     ";
-        // line 10
+        // line 9
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 10
         yield "</head>
 <body>
     ";
-        // line 13
+        // line 12
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 14
+        // line 13
         yield "
-    ";
-        // line 16
-        yield "    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
 </body>
 </html>
 ";
@@ -110,7 +106,7 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
         yield from [];
     }
 
-    // line 10
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -132,7 +128,7 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
         yield from [];
     }
 
-    // line 13
+    // line 12
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -167,7 +163,7 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  136 => 13,  114 => 10,  91 => 5,  77 => 16,  74 => 14,  72 => 13,  68 => 11,  66 => 10,  62 => 8,  57 => 5,  51 => 1,);
+        return array (  132 => 12,  110 => 9,  87 => 5,  72 => 13,  70 => 12,  66 => 10,  64 => 9,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -178,7 +174,6 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
     <meta charset=\"UTF-8\">
     <title>{% block title %}Bienvenue{% endblock %}</title>
 
-    {# ✅ Ajoute Bootstrap 5 CSS ici : #}
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
     
     {% block stylesheets %}{% endblock %}
@@ -186,7 +181,6 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
 <body>
     {% block body %}{% endblock %}
 
-    {# ✅ (Optionnel) Bootstrap JS si nécessaire #}
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
 </body>
 </html>

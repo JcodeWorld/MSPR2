@@ -74,49 +74,69 @@ class __TwigTemplate_ccd76f55f6aa5671ad5bcfc15e272d69 extends Template
 
         // line 4
         yield "<div class=\"text-center mb-4\">
-        <img src=\"";
+    <img src=\"";
         // line 5
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("logo-canopees.png"), "html", null, true);
         yield "\" alt=\"Logo Canopees\" style=\"max-width: 200px;\">
-    </div>
+</div>
 
-    <h1 class=\"mb-4 text-center\">Connexion</h1>
-    ";
-        // line 9
-        if ((($tmp = (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 9, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 10
-            yield "        <div>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 10, $this->source); })()), "messageKey", [], "any", false, false, false, 10), CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 10, $this->source); })()), "messageData", [], "any", false, false, false, 10), "security"), "html", null, true);
-            yield "</div>
-    ";
+<h1 class=\"mb-4 text-center\">Connexion</h1>
+
+";
+        // line 10
+        if ((($tmp = (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 10, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 11
+            yield "    <div class=\"alert alert-danger text-center\">
+        ";
+            // line 12
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 12, $this->source); })()), "messageKey", [], "any", false, false, false, 12), CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 12, $this->source); })()), "messageData", [], "any", false, false, false, 12), "security"), "html", null, true);
+            yield "
+    </div>
+";
         }
-        // line 12
+        // line 15
         yield "
-    <form class=\"text-start ms-5 d-flex justify-content-center\" action=\"";
-        // line 13
+<form class=\"text-start ms-5 d-flex justify-content-center\" action=\"";
+        // line 16
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         yield "\" method=\"post\">
-<div class=\"w-25 d-flex justify-content-center\">
-<div>    
-        <label for=\"username\">Email:</label>
-        <br>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 18, $this->source); })()), "html", null, true);
-        yield "\" required>
-<div/>  
-<div class=\"mt-4\">   
-        <label for=\"password\">Password:</label>
-        <br>
-        <input type=\"password\" id=\"password\" name=\"_password\" required>
+    <div class=\"w-25\">
+        <div class=\"mb-3\">
+            <label for=\"username\">Email :</label>
+            <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 20
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
+        yield "\" required class=\"form-control\">
+        </div>
+
+        <div class=\"mb-3\">
+            <label for=\"password\">Mot de passe :</label>
+            <input type=\"password\" id=\"password\" name=\"_password\" required class=\"form-control\">
+        </div>
 
         <input type=\"hidden\" name=\"_target_path\" value=\"/admin\">
-<div/>  
-<div class=\"mt-5 d-flex justify-content-center\">
-        <button class=\"btn btn-primary\" type=\"submit\">Connexion</button>
-<div/>
-    </form>
 
+        <div class=\"mt-4 d-flex justify-content-center\">
+            <button class=\"btn btn-primary\" type=\"submit\">Connexion</button>
+        </div>
+    </div>
+</form>
+
+<hr class=\"my-5\">
+
+<div class=\"ms-5\">
+    <p>
+        Vous pouvez vous connecter à la page d'administration. <br>
+        Mais il est nécessaire de vous inscrire et d’obtenir les droits administrateur accordés par l’administrateur du site.
+    </p>
+    <div class=\"d-flex align-items-center\">
+        <span>Pour accéder au menu d'inscription :</span>
+        <a class=\"btn btn-outline-primary ms-2\" href=\"";
+        // line 45
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_signin");
+        yield "\">Inscription</a>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -148,7 +168,7 @@ class __TwigTemplate_ccd76f55f6aa5671ad5bcfc15e272d69 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  105 => 18,  97 => 13,  94 => 12,  88 => 10,  86 => 9,  79 => 5,  76 => 4,  63 => 3,  40 => 1,);
+        return array (  136 => 45,  108 => 20,  101 => 16,  98 => 15,  92 => 12,  89 => 11,  87 => 10,  79 => 5,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -157,34 +177,51 @@ class __TwigTemplate_ccd76f55f6aa5671ad5bcfc15e272d69 extends Template
 
 {% block body %}
 <div class=\"text-center mb-4\">
-        <img src=\"{{ asset('logo-canopees.png') }}\" alt=\"Logo Canopees\" style=\"max-width: 200px;\">
+    <img src=\"{{ asset('logo-canopees.png') }}\" alt=\"Logo Canopees\" style=\"max-width: 200px;\">
+</div>
+
+<h1 class=\"mb-4 text-center\">Connexion</h1>
+
+{% if error %}
+    <div class=\"alert alert-danger text-center\">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
     </div>
+{% endif %}
 
-    <h1 class=\"mb-4 text-center\">Connexion</h1>
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+<form class=\"text-start ms-5 d-flex justify-content-center\" action=\"{{ path('app_login') }}\" method=\"post\">
+    <div class=\"w-25\">
+        <div class=\"mb-3\">
+            <label for=\"username\">Email :</label>
+            <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required class=\"form-control\">
+        </div>
 
-    <form class=\"text-start ms-5 d-flex justify-content-center\" action=\"{{ path('app_login') }}\" method=\"post\">
-<div class=\"w-25 d-flex justify-content-center\">
-<div>    
-        <label for=\"username\">Email:</label>
-        <br>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required>
-<div/>  
-<div class=\"mt-4\">   
-        <label for=\"password\">Password:</label>
-        <br>
-        <input type=\"password\" id=\"password\" name=\"_password\" required>
+        <div class=\"mb-3\">
+            <label for=\"password\">Mot de passe :</label>
+            <input type=\"password\" id=\"password\" name=\"_password\" required class=\"form-control\">
+        </div>
 
         <input type=\"hidden\" name=\"_target_path\" value=\"/admin\">
-<div/>  
-<div class=\"mt-5 d-flex justify-content-center\">
-        <button class=\"btn btn-primary\" type=\"submit\">Connexion</button>
-<div/>
-    </form>
 
+        <div class=\"mt-4 d-flex justify-content-center\">
+            <button class=\"btn btn-primary\" type=\"submit\">Connexion</button>
+        </div>
+    </div>
+</form>
+
+<hr class=\"my-5\">
+
+<div class=\"ms-5\">
+    <p>
+        Vous pouvez vous connecter à la page d'administration. <br>
+        Mais il est nécessaire de vous inscrire et d’obtenir les droits administrateur accordés par l’administrateur du site.
+    </p>
+    <div class=\"d-flex align-items-center\">
+        <span>Pour accéder au menu d'inscription :</span>
+        <a class=\"btn btn-outline-primary ms-2\" href=\"{{ path('app_signin') }}\">Inscription</a>
+    </div>
+</div>
 {% endblock %}
+
 ", "login/index.html.twig", "F:\\C-DOSSIER JEROME\\INFORMATIQUE\\formation developpeur Web\\Cours programmation\\Exercice\\MSPR2\\Back_End\\templates\\login\\index.html.twig");
     }
 }
