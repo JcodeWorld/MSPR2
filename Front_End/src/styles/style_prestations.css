@@ -1,14 +1,11 @@
 @import "./style_commun.css";
 /* Prestations */
- .container_global {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container_global{
+position: relative!important;
 }
 .container_image {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: repeat(3, auto); */
   width: 100%;
   min-width: 1100px;
   min-height: 1200px;
@@ -35,12 +32,12 @@
 position: absolute;
 bottom: 15%!important;
 left: 5%!important;
+width: 70%!important;
 background-color: rgba(34, 139, 34, 0.8);
 color: white;
 padding: 15px !important;
 font-weight: bold;
 border-radius: 5px;
-width: 70%!important;
 min-height: 66px !important;
 text-align: center;
 z-index: 1;
@@ -89,191 +86,78 @@ background-color: #f1a80f;
   transform: translate(-45%,-15%)!important;
 }
 .modal {
-  background-color: #fff!important;
-  /* padding: 20px!important; */
-  border-radius: 10px!important;
-  width: 800px!important;
-  /* max-width: 800px!important; */
-  /* max-height: 90vh!important;  */
-  /* overflow-y: auto!important; */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)!important;
-  /* position: absolute!important; */
-  /* top: 0%!important; */
-  /* left:0%!important; */
-} 
-.modal-body{
-  display: grid!important;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important;
-  gap: 12px!important;
-  overflow: visible!important;
-}
-.modal-body img{
+    display: inline!important;
+  top: 50%!important;
+  left: 50%!important;
+    transform: translate(-50%,-50%)!important;
+  position: absolute!important;
   width: 100%!important;
-  height: auto!important;
-  border-radius: 6px!important;
-  object-fit: cover!important;
+  max-height: fit-content!important;
+  z-index: 1!important;
+  background-color: #000000!important;
+  padding: 20px!important;
+  border-radius: 10px!important;
+  max-width: 800px!important;
+  overflow-y: auto!important;
+  box-shadow: 0 0 20px #00000080!important;
 }
-.modal-content {
-  /* position: fixed !important; */
-  /* top: 50%;
-  left: 50%; */
-  /* width: 100vw !important;
-  height: 100vh !important; */
-  /* display: flex !important;
-  justify-content: center !important;
-  align-items: center !important; */
-  /* background-color: rgba(0, 0, 0, 1)!important; */
-  /* z-index: 9999!important; */
+.modal_entete {
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+  margin-bottom: 16px!important;
 }
-/* .modal-overlay {
-  border: 5px solid red;
-} */
-
-/* .modal {
-  border: 5px solid blue;
-} */
-/* .modal {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  position: relative;
-} */
-
-/* .modal_entete {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-} */
-
-/* .modal_entete h2 {
-  margin: 0;
-  color: #005b96;
-} */
-/* 
+.modal_entete h2 {
+  margin: 0!important;
+  color: #005b96!important;
+}
 .croix_Modal {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-} */
-
-/* .modal_content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-} */
-
-/* .Modal_Image img {
+  width: 25px!important;
+  height: 25px!important;
+  cursor: pointer!important;
+}
+.modal_content {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr 1fr!important;
+  grid-template-rows: 1fr 1fr!important;
+  gap: 12px!important;
+}
+.modal_content img {
   width: 100%;
   height: auto;
   border-radius: 6px;
   object-fit: cover;
-} */
+}
 
-
-/* .modal_entete h2 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px !important;
-}
-.modal_entete img {
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-}
-.modal {
-  /* position: absolute !important;
-  left: 50% !important;
-  top: 50% !important; */
-  /* width: 800px !important;
-  height: 420px !important;
-  background-color: black;
-  transform: translate(-50%, -50%) !important;
-  z-index: 2 !important;
-}
-.modal_content {
-  width: 100% !important;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-around !important;
-  align-items: center !important;
-  background-color: black !important;
-}
-.modal_content div {
-  overflow: hidden !important;
-  padding: 2px !important;
-}
-.modal_content div img {
-  min-width: 100% !important;
-  object-fit: cover !important;
-  padding: 1px !important;
-}  */
 @media screen and (max-width: 1000px) {
   .container_image {
  grid-template-columns: 1fr;
  height: fit-content!important;
+ min-width: 100px!important;
 }
   .card {
+    display: flex!important;
     margin-top: 1% !important;
     width: 400px !important;
     height: 400px !important;
+    align-items: center;
+     grid-column: 1!important;
+ grid-row: auto!important;
+transform: translate(0%,0%)!important;
   }
   .text_prestation {
-    width: 30%!important;
-   left: 25%!important;
+  max-width:600px!important;
+  left: 50%!important;
+  min-width: 50% !important;
+transform: translateX(-65%);
   }
   .bouton_desktop_prestation {
     min-width: 15% !important;
   }
-.card{
- grid-column: 1;
- grid-row: auto;
-transform: translate(0%,0%)!important;
-}
-  /* .modal_entete h2 {
-    text-align: start;
-  } */
-  /* .modal {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    width: 270px !important;
-    height: 1150px !important;
-    background-color: black;
-    transform: translate(-50%, -50%) !important;
+ .modal {
+    max-width: 400px!important;
   }
   .modal_content {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-content: space-around !important;
-    align-items: center !important;
-    background-color: black !important;
+    grid-template-columns: 1fr!important;
   }
-  .modal_content div {
-    width: 265px !important;
-  }
-  .une {
-    top: 0 !important;
-  }
-  .deux {
-    right: 0 !important;
-  }
-  .trois {
-    left: 0 !important;
-  }
-  .quatre {
-    right: 0 !important;
-  }
-  .cinq {
-    left: 0 !important;
-  } */
 }

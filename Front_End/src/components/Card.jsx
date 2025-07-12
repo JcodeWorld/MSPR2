@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalPret from "./ModalPret";
+import Modal from "./Modal";
 import PropTypes from "prop-types";
 import "../styles/style_prestations.css";
 
@@ -7,6 +7,7 @@ export default function Card({ index, texteCard, imageCard, imageModal }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
+    <>
       <div className={`card card${index}`}>
               {imageCard ? (
         <img src={imageCard} alt={`Illustration de la prestation ${index}`} />
@@ -22,10 +23,12 @@ export default function Card({ index, texteCard, imageCard, imageModal }) {
         >
           En Savoir +
         </button>
-      {showModal && (
-        <ModalPret open={showModal} imageModal={imageModal} onClose={() => setShowModal(false)} />
+      </div>
+                {showModal && (
+        <Modal imageModal={imageModal} onClose={() => setShowModal(false)} />
+
       )}
-    </div>
+              </>
   );
 }
 Card.propTypes = {

@@ -10,13 +10,17 @@ export default function Prestations({ contenus }) {
     const texteCard = ExtractionTexte(contenus, `Prestation_${index}`);
     const imageCardData = ExtractionImage(contenus, `Prestation_${index}`, 1);
     const imageCard = imageCardData.length > 0 ? imageCardData[0].image : "";
-    const imageModal = ExtractionImage(contenus, `Prestation_realisation_${index}`, 6);
+    const imageModal = ExtractionImage(
+      contenus,
+      `Prestation_realisation_${index}`,
+      6
+    );
     return {
       id: index,
       nomCard,
       texteCard,
       imageCard,
-      imageModal
+      imageModal,
     };
   });
   return (
@@ -31,9 +35,10 @@ export default function Prestations({ contenus }) {
             imageModal={item.imageModal}
           />
         ))}
-      </div>
+              </div>
     </div>
-  );}
+  );
+}
 Prestations.propTypes = {
   contenus: PropTypes.array.isRequired,
 };

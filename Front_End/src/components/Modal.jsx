@@ -2,7 +2,7 @@ import Croix_Close_Modal from "../assets/icone/Croix_Close_Modal.png";
 import PropTypes from "prop-types";
 import "../styles/style_prestations.css"
 
-export default function Modal({ imageModal, onClose }) {
+export default function Modal({imageModal, onClose }) {
   const imagesValides = imageModal.filter(
     (item) => item.image && item.image.trim() !== ""
   );
@@ -23,12 +23,10 @@ export default function Modal({ imageModal, onClose }) {
 <div className="modal_content">
 {imagesValides.length > 0 ? (
             imagesValides.map((modalItem, idx) => (
-              <div className="Modal_Image" key={idx}>
-                <img
+                <img className="Modal_Image" key={idx}
                   src={modalItem.image}
                   alt={modalItem.description || `Image ${idx + 1}`}
                 />
-              </div>
             ))
           ) : (
             <p style={{ textAlign: "center", padding: "1rem" }}>
