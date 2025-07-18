@@ -96,7 +96,7 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Bienvenue";
+        yield "Administration site";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -172,7 +172,7 @@ class __TwigTemplate_88d20c4fc66947fc8ce88d34d4e84320 extends Template
 <html>
 <head>
     <meta charset=\"UTF-8\">
-    <title>{% block title %}Bienvenue{% endblock %}</title>
+    <title>{% block title %}Administration site{% endblock %}</title>
 
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
     

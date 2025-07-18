@@ -10,6 +10,7 @@ import "../styles/style_accueil.css";
 export default function Carrousel({ contenus }) {
   //Traitement data API
   const AccueilCarroussel = ExtractionImage(contenus, "Accueil_carrousel", 6);
+console.log(AccueilCarroussel);
 
   //Carrousel
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

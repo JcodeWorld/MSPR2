@@ -31,7 +31,7 @@ class PageWeb
      * @var Collection<int, Contenir>
      */
     #[ORM\OneToMany(mappedBy: 'IdPageWeb', targetEntity: Contenir::class)]
-    #[Groups(['pageweb:read'])] // ⚠️ pas dans 'contenir:read' pour éviter boucle
+    #[Groups(['pageweb:read'])]
     #[MaxDepth(1)]
     private Collection $contenirs;
 

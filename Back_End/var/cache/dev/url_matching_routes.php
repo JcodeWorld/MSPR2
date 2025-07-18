@@ -37,6 +37,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/api/contact' => [[['_route' => 'api_contact', '_controller' => 'App\\Controller\\ContactController::contact'], null, ['POST' => 0], null, false, false, null]],
+        '/api/contenu/Accueil' => [[['_route' => 'api_contenu_accueil', '_controller' => 'App\\Controller\\ContenuPageAccueilController::getContenusAccueil'], null, ['GET' => 0], null, false, false, null]],
         '/api/contenu/Toutepage' => [[['_route' => 'api_contenu_toute_page', '_controller' => 'App\\Controller\\ContenuPageController::getContenusToutesPages'], null, ['GET' => 0], null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],

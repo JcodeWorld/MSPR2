@@ -5,6 +5,7 @@ import Slider from "../components/Slider";
 import PropTypes from 'prop-types';
 import "../styles/style_accueil.css";
 
+
 export default function Accueil({ contenus }) {
   const [accueilContenu, setAccueilContenu] = useState([]);
 

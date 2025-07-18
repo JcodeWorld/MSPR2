@@ -4,7 +4,6 @@ import "../styles/style_qui_sommes_nous.css";
 import PropTypes from "prop-types";
 
 export default function Qui({contenus}) {
- console.log(contenus);
  
   //Traitement data API
 const QuiNomProfil1 = ExtractionTexte(contenus, "Qui_Nom_profil_1");
@@ -22,7 +21,7 @@ const QuiPhotoProfil2 = PhotoProfil2.length > 0 ? PhotoProfil2[0].image : "";
       <div className="container_dirigeant1">
         <div className="container_texte my-auto">
           {QuiNomProfil1 ? (
-            <h1 className="titre2_desktop mauve_text fs-3 text-center mb-4">{QuiNomProfil1}</h1>
+            <h2 className="titre2_desktop mauve_text fs-3 text-center mb-4">{QuiNomProfil1}</h2>
           ) : (
             <p style={{ color: "red" }}>
               ⚠️ Désolé, aucune information disponible pour Qui_Nom_Profil1

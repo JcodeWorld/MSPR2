@@ -4,6 +4,7 @@
   display: flex!important;
   flex-direction: column;
   width: 100%;
+  margin: 1% 0!important;
 }
 .container_ligne{
   display: flex!important;

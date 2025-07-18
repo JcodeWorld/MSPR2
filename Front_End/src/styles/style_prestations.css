@@ -92,7 +92,7 @@ background-color: #f1a80f;
     transform: translate(-50%,-50%)!important;
   position: absolute!important;
   width: 100%!important;
-  max-height: fit-content!important;
+  height: fit-content!important;
   z-index: 1!important;
   background-color: #000000!important;
   padding: 20px!important;

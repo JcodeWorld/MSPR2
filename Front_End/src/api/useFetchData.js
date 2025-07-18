@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 export default function useFetchData(url) {
   const [data, setData] = useState([]);
@@ -11,34 +10,38 @@ export default function useFetchData(url) {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(url);
-        if (estMonte) {
-          if (Array.isArray(response.data) && response.data.length === 0) {
-            setError("Aucune valeur trouvée.");
-          } else {
-            setData(response.data);
-            setError(null); // Reset erreur si succès
-          }
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error(`Erreur ${response.status} : ${response.statusText}`);
         }
-      } catch (err) {
+
+        const result = await response.json();
         if (estMonte) {
-          setError(
-            err.response?.data?.message || err.message || "Une erreur est survenue"
-          );
+        if (Array.isArray(result) && result.length === 0) {
+          setError("Aucune valeur trouvée.");
+        } else {
+          setData(result);
+          setError(null);
+        }
+      } 
+    } catch (err) {
+        if (err.name !== "AbortError"&&estMonte) {
+          setError(err.message || "Une erreur est survenue");
         }
       } finally {
         if (estMonte) {
-          setLoading(false);
-        }
+        setLoading(false);
       }
-    };
+    }
+  };
 
     fetchData();
 
-    return () => {
+    return () =>  {
       estMonte = false;
     };
-  }, [url]);
+    }, [url]);
 
   return { data, loading, error };
 }

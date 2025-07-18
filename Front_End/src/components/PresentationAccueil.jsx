@@ -48,6 +48,7 @@ export default function PresentationAccueil({
           <Link
             className="bouton_desktop red_border my-5"
             role="button"
+            aria-label="Pour en savoir plus sur les prestations"
             to="/Prestations"
           >
             En Savoir +

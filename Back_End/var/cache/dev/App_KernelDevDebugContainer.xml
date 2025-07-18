@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -142,15 +142,15 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
     <parameter key="cache.prefix.seed">_F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -168,11 +168,11 @@
       <parameter key="data-controller">csrf-protection</parameter>
     </parameter>
     <parameter key=".form.type_extension.csrf.token_id">submit</parameter>
-    <parameter key="validator.mapping.cache.file">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -248,7 +248,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -653,6 +653,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ContactController"/>
       </call>
     </service>
+    <service id="App\Controller\ContenuPageAccueilController" class="App\Controller\ContenuPageAccueilController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\ContenuPageAccueilController"/>
+      </call>
+    </service>
     <service id="App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -740,10 +747,6 @@
     <service id="App\Form\SigninType" class="App\Form\SigninType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
-    <service id="App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -768,31 +771,11 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -831,7 +814,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.bxdKYf3"/>
+      <argument type="service" id=".service_locator.zrxKeyZ"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -915,7 +898,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/http_cache</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -925,7 +908,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -2044,7 +2027,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2063,7 +2046,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/app</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -2246,7 +2229,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/asset_mapper</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/asset_mapper</argument>
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2632,7 +2615,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/translations</argument>
+        <argument key="cache_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -4079,7 +4062,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.bxdKYf3"/>
+      <argument type="service" id=".service_locator.zrxKeyZ"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4188,7 +4171,7 @@
       <argument type="service" id=".service_locator.euaNshl.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+        <argument key="cache_dir">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -4407,10 +4390,10 @@
           </service>
         </argument>
       </argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/serialization.php</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/serialization.php</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4645,7 +4628,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/sessions</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4867,10 +4850,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/validation.php</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/validation.php</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -5568,7 +5551,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/profiler</argument>
+      <argument>file:F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -5648,7 +5631,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -6088,7 +6071,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.9WgMERs"/>
+      <argument type="service" id=".service_locator.pvowd6B"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6278,7 +6261,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -6697,7 +6680,7 @@
       <tag name="kernel.reset" method="resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/twig</argument>
+        <argument key="cache">F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -9612,7 +9595,7 @@
       <argument type="service" id="router.default"/>
       <argument type="service" id="cache.easyadmin"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\ControllerFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\ControllerFactory">
@@ -9624,7 +9607,7 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\MenuFactory"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
@@ -9654,14 +9637,14 @@
       <argument type="tagged_iterator" tag="ea.crud_controller"/>
       <argument type="service" id="cache.easyadmin"/>
       <argument type="service" id="filesystem"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
       <argument>en</argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteLoader" class="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteLoader">
       <tag name="routing.loader" type="easyadmin.routes"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator"/>
       <argument type="service" id="filesystem"/>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Router\UrlSigner" class="EasyCorp\Bundle\EasyAdminBundle\Router\UrlSigner">
       <argument>%env(APP_SECRET)%</argument>
@@ -9907,6 +9890,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContenuPageAccueilController" class="App\Controller\ContenuPageAccueilController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContenuPageAccueilController" class="App\Controller\ContenuPageAccueilController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\ContenuPageAccueilController.0.App\Controller\ContenuPageAccueilController" class="App\Controller\ContenuPageAccueilController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContenuPageAccueilController" class="App\Controller\ContenuPageAccueilController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\ContenuPageController.0.App\Controller\ContenuPageController" class="App\Controller\ContenuPageController" autowire="true" abstract="true"/>
@@ -9955,8 +9942,6 @@
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SigninType" class="App\Form\SigninType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SigninType" class="App\Form\SigninType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ActionRepository" class="App\Repository\ActionRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AssocierContenuRepository" class="App\Repository\AssocierContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AssocierTarifRepository" class="App\Repository\AssocierTarifRepository" autowire="true" abstract="true"/>
@@ -9969,20 +9954,10 @@
     <service id=".abstract.instanceof.App\Repository\ContenuRepository" class="App\Repository\ContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ModifierContenuRepository" class="App\Repository\ModifierContenuRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ModifierTarifRepository" class="App\Repository\ModifierTarifRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PageWebRepository" class="App\Repository\PageWebRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TarifRepository" class="App\Repository\TarifRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\TraiterRepository" class="App\Repository\TraiterRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\UserAdminRepository" class="App\Repository\UserAdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Filter\FilterConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" abstract="true"/>
@@ -11216,6 +11191,12 @@
         <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.Kq27LHM.App\Controller\ContenuPageAccueilController::getContenusAccueil()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ContenuPageAccueilController::getContenusAccueil()"/>
+      <argument>App\Controller\ContenuPageAccueilController::getContenusAccueil()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Kq27LHM" method="withContext"/>
+    </service>
     <service id=".service_locator.Kq27LHM.App\Controller\ContenuPageController::getContenusToutesPages()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ContenuPageController::getContenusToutesPages()"/>
       <argument>App\Controller\ContenuPageController::getContenusToutesPages()</argument>
@@ -11253,7 +11234,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Kq27LHM" method="withContext"/>
     </service>
-    <service id=".service_locator.bxdKYf3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zrxKeyZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -11346,6 +11327,7 @@
         <argument key="App\Controller\Admin\UserCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\UserCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\UserCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\ContactController::contact" type="service_closure" id=".service_locator.i50h5v4.App\Controller\ContactController::contact()"/>
+        <argument key="App\Controller\ContenuPageAccueilController::getContenusAccueil" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ContenuPageAccueilController::getContenusAccueil()"/>
         <argument key="App\Controller\ContenuPageController::getContenusToutesPages" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ContenuPageController::getContenusToutesPages()"/>
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.3QECKYg.App\Controller\LoginController::index()"/>
         <argument key="App\Controller\SigninController::index" type="service_closure" id=".service_locator.A84gqGd.App\Controller\SigninController::index()"/>
@@ -11438,6 +11420,7 @@
         <argument key="App\Controller\Admin\UserCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\UserCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\UserCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\ContactController:contact" type="service_closure" id=".service_locator.i50h5v4.App\Controller\ContactController::contact()"/>
+        <argument key="App\Controller\ContenuPageAccueilController:getContenusAccueil" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ContenuPageAccueilController::getContenusAccueil()"/>
         <argument key="App\Controller\ContenuPageController:getContenusToutesPages" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ContenuPageController::getContenusToutesPages()"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.3QECKYg.App\Controller\LoginController::index()"/>
         <argument key="App\Controller\SigninController:index" type="service_closure" id=".service_locator.A84gqGd.App\Controller\SigninController::index()"/>
@@ -11874,23 +11857,17 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.9WgMERs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pvowd6B" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\ActionRepository" type="service_closure" id="App\Repository\ActionRepository"/>
         <argument key="App\Repository\AssocierContenuRepository" type="service_closure" id="App\Repository\AssocierContenuRepository"/>
         <argument key="App\Repository\AssocierTarifRepository" type="service_closure" id="App\Repository\AssocierTarifRepository"/>
         <argument key="App\Repository\ContainerRepository" type="service_closure" id="App\Repository\ContainerRepository"/>
         <argument key="App\Repository\ContenirRepository" type="service_closure" id="App\Repository\ContenirRepository"/>
         <argument key="App\Repository\ContenuRepository" type="service_closure" id="App\Repository\ContenuRepository"/>
         <argument key="App\Repository\MessageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
-        <argument key="App\Repository\ModifierContenuRepository" type="service_closure" id="App\Repository\ModifierContenuRepository"/>
-        <argument key="App\Repository\ModifierTarifRepository" type="service_closure" id="App\Repository\ModifierTarifRepository"/>
         <argument key="App\Repository\PageWebRepository" type="service_closure" id="App\Repository\PageWebRepository"/>
-        <argument key="App\Repository\ProfilRepository" type="service_closure" id="App\Repository\ProfilRepository"/>
         <argument key="App\Repository\TarifRepository" type="service_closure" id="App\Repository\TarifRepository"/>
-        <argument key="App\Repository\TraiterRepository" type="service_closure" id="App\Repository\TraiterRepository"/>
-        <argument key="App\Repository\UserAdminRepository" type="service_closure" id="App\Repository\UserAdminRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -12129,7 +12106,7 @@
       </argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry">
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev</argument>
       <argument type="collection">
         <argument key="App\Controller\Admin\DashboardController">5eb9c50</argument>
       </argument>
@@ -12274,6 +12251,12 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
       <argument>App\Controller\ContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\ContenuPageAccueilController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ContenuPageAccueilController"/>
+      <argument>App\Controller\ContenuPageAccueilController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -12576,6 +12559,7 @@
           <argument>App\Controller\Admin\TarifCrudController</argument>
           <argument>App\Controller\Admin\UserCrudController</argument>
           <argument>App\Controller\ContactController</argument>
+          <argument>App\Controller\ContenuPageAccueilController</argument>
           <argument>App\Controller\ContenuPageController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\LoginController</argument>
@@ -14057,7 +14041,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>iaNmt-YQxX</argument>
       <argument>0</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/app</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -14067,7 +14051,7 @@
       <argument>BbvDpu+Rmg</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14075,7 +14059,7 @@
       <argument>IkP8xZA9h1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14083,7 +14067,7 @@
       <argument>AmRYkOR4bx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14091,7 +14075,7 @@
       <argument>1gO8TAy12M</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14099,14 +14083,14 @@
       <argument>nvUvg3xlKB</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>dxldgQLqsJ</argument>
       <argument>0</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/app</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -14116,7 +14100,7 @@
       <argument>ADTUayWs65</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14126,7 +14110,7 @@
       <argument>duL113RHf8</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14134,7 +14118,7 @@
       <argument>FtglM84h09</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14142,7 +14126,7 @@
       <argument>3Ugav9p+BA</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14150,7 +14134,7 @@
       <argument>PONpEOPa-8</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14158,7 +14142,7 @@
       <argument>t+WHRkwZnX</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14166,7 +14150,7 @@
       <argument>+YFUn1zLld</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14174,7 +14158,7 @@
       <argument>YXE7FWpDEe</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14182,7 +14166,7 @@
       <argument>CKbRqJO6cL</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14190,7 +14174,7 @@
       <argument>krNEcUbMy4</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14198,7 +14182,7 @@
       <argument>1z54otjx76</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>F:/C-DOSSIER JEROME/INFORMATIQUE/formation developpeur Web/Cours programmation/Exercice/MSPR2/Back_End/var/cache/dev/pools/system</argument>
+      <argument>F:\C-DOSSIER JEROME\INFORMATIQUE\formation developpeur Web\Cours programmation\Exercice\MSPR2\Back_End\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -14431,7 +14415,7 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Contracts\Orm\EntityPaginatorInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.bxdKYf3"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.zrxKeyZ"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

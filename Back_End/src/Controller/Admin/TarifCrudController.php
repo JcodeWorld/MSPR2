@@ -23,7 +23,7 @@ class TarifCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('Designation_Tarif', 'Prestations'),
-            TextField::new('Prix_Tarif ', 'Prix'),
+            TextField::new('Prix_Tarif', 'Prix'),
         ];
     }
     

@@ -47,24 +47,3 @@ Modal.propTypes = {
   ).isRequired,
   onClose: PropTypes.func.isRequired,
 };
-
-// import Croix_Close_Modal from "../assets/icone/Croix_Hamburger_icon.png"
-
-// export default function Modal(imageModal) {
-//   return (
-//     <div className="vide">
-//           <div className="modal">
-//             <div className="modal_entete">
-//               <h2 className="blue_text">Nos réalisations</h2>
-//               <img className="croix_Modal" src={Croix_Close_Modal}
-//               alt="Fermer fenetre Modal"/>
-//             </div>
-//             {/* <div className="modal_content">
-//               {imageModal.map(ModalItem) => (
-//                <div className="Modal_Image" key={ModalItem.id}><img src={ModalItem.image} alt=""/></div>
-//               )}
-//             </div> */}
-//           </div>
-//         </div>
-//   )
-// }

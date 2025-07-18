@@ -19,6 +19,7 @@ export default function Card({ index, texteCard, imageCard, imageModal }) {
         <div className="text_prestation paragraphe_desktop semibold_paragraphe">{texteCard}</div>
         <button
           className={`bouton_desktop_prestation btn${index}`}
+          aria-label="Pour voir les realisations en relation avec la prestation"
           onClick={() => setShowModal(true)}
         >
           En Savoir +
