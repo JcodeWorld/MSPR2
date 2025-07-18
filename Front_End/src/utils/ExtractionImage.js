@@ -1,10 +1,4 @@
-// export default function ExtractionImage(contenu, container, nbImage) {
-//     const ExtractionContainer = contenu.filter(
-//       (item) => item.nomContainer === container
-//     );
-//     return ExtractionContainer.length > 0 ? ExtractionContainer.slice(0, nbImage): [];
-//   }
-import variableGlobal from "../assets/VariableGlobal"; // adapte le chemin si nécessaire
+import variableGlobal from "../assets/VariableGlobal";
 
 export default function ExtractionImage(contenu, container, nbImage) {
   console.log(contenu);
