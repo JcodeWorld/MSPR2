@@ -12,7 +12,7 @@ import CGU from "./pages/CGU";
 import CGV from "./pages/CGV";
 import Mention from "./pages/Mention";
 import Copyright from "./pages/Copyright";
-import photoParDefaut from "./assets/Slider/Photo1Slider.webp";
+
 
 
 
@@ -20,7 +20,12 @@ export default function App() {
   const urlaccueilContenus = `${variableGlobal.UrlBackEnd}/api/contenu/Accueil`;
   const urlContenus = `${variableGlobal.UrlBackEnd}/api/contenu/Toutepage`;
   const urlTarifs = `${variableGlobal.UrlBackEnd}/api/tarif`;
-
+console.log({
+  urlaccueil: urlaccueilContenus,
+  urlall: urlContenus,
+  urltarif: urlTarifs,
+});
+ 
     const {
     data: dataAccueilContenus,
     loading: loadingAccueilContenus,
@@ -36,28 +41,20 @@ export default function App() {
     loading: loadingTarifs,
     error: errorTarifs,
   } = useFetchData(urlTarifs);
-const defaultAccueilContenus = [
-  {
-    idPage: 1,
-    urlPage: "Accueil",
-    idContainer : 8,
-    nomContainer: "Accueil_slider",
-    description: "Image par défaut",
-    image: photoParDefaut,
-    texte: null,
-  },
-];
 
   const [accueilContenus, setAccueilContenus] = useState([]);
   const [contenus, setContenus] = useState([]);
   const [tarifs, setTarifs] = useState([]);
 
+  console.log({
+  contenuaccueil: accueilContenus,
+  contenuall: contenus,
+  contenutarif: tarifs,
+});
     useEffect(() => {
     if (dataAccueilContenus?.length > 0) {
       setAccueilContenus(dataAccueilContenus);
-    } else {
-      setAccueilContenus(defaultAccueilContenus)
-    }
+    } 
   }, [dataAccueilContenus]);
 
   useEffect(() => {

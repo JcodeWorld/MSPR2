@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import ExtractionImage from "../utils/ExtractionImage";
-import photoParDefaut from "../assets/Slider/Photo1Slider.webp";
 import PropTypes from 'prop-types';
 import "../styles/style_accueil.css";
 
@@ -34,18 +33,12 @@ export default function Slider({ contenus }) {
     return () => clearInterval(id);
   }, [emblaApi]);
 
-  const slidesToShow = AccueilSlider.length > 0
-    ? AccueilSlider
-    : [
-        {
-          id: 0,
-          image: photoParDefaut,
-          description: "Image statique par défaut",
-        },
-      ];
+const slidesToShow = AccueilSlider.length > 0
+  ? AccueilSlider
+  : [];
 
   return (
-    <section className="bg-white titre1_desktop w-100">
+    <section className="bg-white titre1_desktop w-100" role="region" aria-label="Slider présentant photo de l'activité">
       <div className="slider_container" ref={emblaRef}>
         <div className="embla__container_slider">
           {slidesToShow.map((objet, index) => (

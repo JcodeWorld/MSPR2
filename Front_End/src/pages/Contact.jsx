@@ -1,7 +1,9 @@
 import { useState } from "react";
+import variableGlobal from "../assets/VariableGlobal";
 import "../styles/style_contact.css";
 
 export default function Contact() {
+  const urlaccueilContact = `${variableGlobal.UrlBackEnd}/api/contact`;
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -32,7 +34,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const response = await fetch(urlaccueilContact, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

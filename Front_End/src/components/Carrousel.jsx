@@ -44,7 +44,7 @@ const restartAutoScroll = () => {
 };
 //contenu composant
   return (
-    <section className="green_background paragraphe_desktop">
+    <section className="green_background paragraphe_desktop" role="region" aria-label="Carrousel présentant photo de réalisation">
       <div className="caroussel_container">
         <img
           className="caroussel_bouton droite embla__prev"

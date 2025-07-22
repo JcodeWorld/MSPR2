@@ -57,8 +57,10 @@ background-color: #f1a80f;
   font-size: 1.3rem;
   letter-spacing: 0em;
   padding: 8px 25px !important;
-  -webkit-text-stroke: 0.02rem black;
   text-shadow: 1px 2px 3px black;
+}
+.bouton_desktop_prestation:hover{
+    color: #2a4c9b !important;
 }
 .card1 {
   grid-column: 2;

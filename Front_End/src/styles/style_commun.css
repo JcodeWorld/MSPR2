@@ -14,24 +14,37 @@ li {
 }
 /*Loader */
 .loader {
-  width: fit-content;
-  font-size: 50px;
-  font-family: system-ui,sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0000;
-  -webkit-text-stroke: 1px #000;
-  background: 
-    linear-gradient(90deg,#0000 33%,#692b85 0 67%,#0000 0) 
-    0/300% 100% no-repeat text;
-  animation: l2 2s linear infinite;
-}
-.loader:before {
-  content: "Loading";
-}
-@keyframes l2 {
-  0%{background-position: 100%}
-}
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite;
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 10px;
+        border-radius: 50%;
+        border: 7px solid #098137;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        border-color: #b23b53;
+        animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+        inset: 6px;
+      }
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+          75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+          100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+      }
 /* Web Page Style */
 /* Font */
 .titre1_desktop {
@@ -112,7 +125,6 @@ li {
   font-size: 1.3rem;
   letter-spacing: 0em;
   padding: 8px 25px !important;
-  -webkit-text-stroke: 0.02rem black;
   text-shadow: 1px 2px 3px black;
 }
 input[type=checkbox]:hover, a:hover, .bouton_desktop:hover, .bouton_desktop_prestation:hover {
@@ -153,7 +165,6 @@ input[type=checkbox]:hover, a:hover, .bouton_desktop:hover, .bouton_desktop_pres
 }
 .link_navbar-desktop a {
   color: #2a4c9b;
-  -webkit-text-stroke: 0.02rem black;
   text-shadow: 1px 2px 6px #f1a80f;
 }
 .link_navbar-desktop a:hover {
@@ -197,14 +208,14 @@ input[type=checkbox]:hover, a:hover, .bouton_desktop:hover, .bouton_desktop_pres
 }
 .sous-menu li a {
   padding: 15px !important;
-  -webkit-text-stroke: 0.02rem black;
+  /* -webkit-text-stroke: 0.02rem black; */
   text-shadow: 1px 1px 2px black;
 }
 .Navbar_mobile_select {
   color: #2a4c9b !important;
 }
 .sous-menu li a:hover,
-button:hover {
+.bouton_desktop:hover {
   color: #2a4c9b !important;
 }
 /* Footer */

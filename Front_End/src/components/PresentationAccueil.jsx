@@ -17,8 +17,8 @@ export default function PresentationAccueil({
   const AccueilCollectivite = ExtractionTexte(contenus, "Accueil_collectivite");
   // contenu composant
   return (
-    <div>
-      <section className="presentation_entreprise bg-white">
+    <>
+      <section className="presentation_entreprise bg-white" role="region" aria-label="Présentation de l'entreprise et de ces activités">
         <div className="presentation paragraphe_desktop pe-4">
           <h1 className="titre1_desktop mauve_text text-center mb-3">
             Notre Société en quelques mots ?
@@ -46,7 +46,7 @@ export default function PresentationAccueil({
             </p>
           )}
           <Link
-            className="bouton_desktop red_border my-5"
+            className="bouton_desktop red_border my-5" id="bouton_desktop_accueil"
             role="button"
             aria-label="Pour en savoir plus sur les prestations"
             to="/Prestations"
@@ -121,7 +121,7 @@ export default function PresentationAccueil({
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 PresentationAccueil.propTypes = {
