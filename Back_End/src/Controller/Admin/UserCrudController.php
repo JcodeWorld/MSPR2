@@ -13,7 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Bundle\SecurityBundle\Security; // ✅ bon namespace
+use Symfony\Bundle\SecurityBundle\Security;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -43,7 +43,7 @@ class UserCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $user = $this->security->getUser(); // ✅ utilise l'objet Security injecté
+        $user = $this->security->getUser(); 
 
  return $actions
         ->disable(Action::NEW, Action::DELETE)
@@ -60,7 +60,7 @@ class UserCrudController extends AbstractCrudController
 
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
     {
-        $user = $this->security->getUser(); // ✅ utilisateur connecté
+        $user = $this->security->getUser(); 
 
         return parent::createIndexQueryBuilder($searchDto, $entityDto, $fields, $filters)
             ->andWhere('entity.id = :id')

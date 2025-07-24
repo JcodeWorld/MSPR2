@@ -14,12 +14,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 
 
 class ContenuCrudController extends AbstractCrudController
-{
-    public static function getEntityFqcn(): string
+{    public static function getEntityFqcn(): string
     {
         return Contenu::class;
     }
-
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -29,10 +27,10 @@ class ContenuCrudController extends AbstractCrudController
             TextField::new('Contenu_texte_Contenu', 'Texte du Contenu'),
         ];
     }
-
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            ->disable(Action::NEW, Action::DELETE);
+            ->disable(Action::NEW, Action::DELETE)
+            ->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 }

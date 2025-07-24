@@ -81,7 +81,7 @@ class __TwigTemplate_b6901a68db9e8ea04e2b9fc427cbe591 extends Template
         yield "\" alt=\"Logo Canopees\" style=\"max-width: 200px;\">
     </div>
 
-    <h1 class=\"mb-4\">Page d'administration</h1>
+    <h1 class=\"mb-4\">Page d'administration site</h1>
 
     <div class=\"mx-auto w-50 text-start\">
         <p>
@@ -149,7 +149,7 @@ class __TwigTemplate_b6901a68db9e8ea04e2b9fc427cbe591 extends Template
         <img src=\"{{ asset('logo-canopees.png') }}\" alt=\"Logo Canopees\" style=\"max-width: 200px;\">
     </div>
 
-    <h1 class=\"mb-4\">Page d'administration</h1>
+    <h1 class=\"mb-4\">Page d'administration site</h1>
 
     <div class=\"mx-auto w-50 text-start\">
         <p>

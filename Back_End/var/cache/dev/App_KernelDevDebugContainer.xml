@@ -7950,7 +7950,7 @@
       <call method="setOptions">
         <argument type="collection">
           <argument key="login_path">app_login</argument>
-          <argument key="default_target_path">app_home</argument>
+          <argument key="default_target_path">admin</argument>
           <argument key="always_use_default_target_path">false</argument>
           <argument key="target_path_parameter">_target_path</argument>
           <argument key="use_referer">false</argument>
