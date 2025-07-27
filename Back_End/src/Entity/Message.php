@@ -11,6 +11,21 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 #[ApiResource(
+            new Get(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
+        new GetCollection(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
+        new Post(
+            security: "is_granted('PUBLIC_ACCESS')" // si tu veux autoriser l'inscription
+        ),
+        new Patch(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
+        new Delete(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
     normalizationContext: ['groups' => ['message:read']],
     denormalizationContext: ['groups' => ['message:write']]
 )]

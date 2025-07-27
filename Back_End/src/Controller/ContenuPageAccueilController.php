@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ContenuPageAccueilController extends AbstractController
 {
-    #[Route('/api/contenu/Accueil', name: 'api_contenu_accueil', methods: ['GET'])]
+    #[Route('/contenu/Accueil', name: 'api_contenu_accueil', methods: ['GET'])]
     public function getContenusAccueil(EntityManagerInterface $em): JsonResponse
     {
         $qb = $em->createQueryBuilder();

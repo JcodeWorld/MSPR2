@@ -19,7 +19,6 @@ return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hyd
                     'App\\Entity\\Message',
                     'App\\Entity\\PageWeb',
                     'App\\Entity\\Tarif',
-                    'App\\Entity\\User',
                 ],
             ],
         ],
